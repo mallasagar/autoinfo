@@ -1,0 +1,38 @@
+
+  
+    body{
+        background-color:#36454f;
+        color: white
+    }
+
+    .topheader {
+        background-color:rgb(50, 56, 32);
+        overflow: hidden;
+        
+    }
+                                        /* left top header */
+    .topleftheader{
+        float: left;
+        width: auto;
+        height: auto;
+       
+    }
+
+    .topleftheader li{
+        display: inline-block;
+        align-items: center;
+        margin:auto;
+        padding-left: 30px;
+    }
+    
+
+                                          /* right top header */
+    .toprightheader{
+    float: right;
+    width: auto;
+    height: auto;
+    padding-right: 54px;
+    }
+
+
+
