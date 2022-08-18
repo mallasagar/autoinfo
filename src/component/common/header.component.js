@@ -9,35 +9,28 @@ export function Myheader(){
         //main header
     <div className="header">
 
-                                                    {/* top header */}
-                 <div className="topheader">  
-                        <div className="topleftheader">
-                                <ul>
-                                    <li><a href="https://www.linkedin.com/in/mallasagar/" ><img src={require("./icon/linkedin.png") } alt="linkedin" ></img></a></li>
-                                    <li> <a href="https://www.facebook.com/mallasagar46/" >< img src={require("./icon/facebook.png") } alt="facebook"  ></img></a></li>
-                                    <li><a href = "mailto: mallasagar0101@gmail.com" ><img src={require("./icon/email.png")} alt="email"  ></img></a></li>
-                                </ul>
-                        </div>
-                        <div className="toprightheader">
-                                    <p>+977 9860185231</p>
-                        </div>
-               </div>
 
+            <div className="topheader">
+                <div>Instagram</div>
+                <div>linkedin</div>
+                <div>Email</div>
+            </div>
+                                                    
+                 
+                    <ul className="navbar">
+                        <li className="logo">Autoinfo</li>
+                        <li className="twowheel">Two</li>
+                        <li className="fourwheel">Four</li>
+                        <li className="gallery">Gallery</li>
+                        <li className="about">About</li>
+                        <li className="home">Home</li>
+                    </ul>
+               
 
-                                        {/* bottom header */}
-                    <div className="bottomheader">
-                        <div>img</div>
-                        <div className="rightbottomheader">
-                                <ul>
-                                    <li>Two</li>
-                                    <li>four</li>
-                                    <li>Brand</li>
-                                    <li>Aboutus</li>
-                                    <li>Home </li>
-                                </ul>
-                        </div>
-                    </div>
      </div>
+                                        
+               
+     
       
     )
 }
