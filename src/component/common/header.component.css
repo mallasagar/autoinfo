@@ -116,7 +116,7 @@
         color: #36454f;
         margin-right: 20px;
       }
-      @media screen and (max-width: 1000px) {
+      @media screen and (max-width: 1200px) {
         .twowheel{
           margin-left: 100px;
         }

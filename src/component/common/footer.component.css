@@ -1,0 +1,96 @@
+html body{
+    height: 100%;
+    width: 100%;
+}
+
+.footer{
+    background-color:  rgb(154, 255, 40);
+    color: #36454f;
+    border-radius: 15px;
+  
+}
+
+
+
+.topfooter{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+}
+.blog{
+    flex: 1;
+    justify-content: center;
+}
+
+.blog ul{
+    list-style-type: none;
+}
+.blog li{
+    font-size: 12px;
+    font-weight: 700;
+   
+}
+.location{
+    flex: 1;
+   
+    }
+    .location ul{
+       margin-bottom: 40px;
+        
+    }
+    
+    .location li{
+   
+    align-self: flex-start;
+    list-style: none;
+    font-size: 12px;
+    font-weight: 700;
+   
+}
+.service{
+    flex:1;
+  
+}
+
+.service ul{
+    list-style: none;
+}
+.service li{
+    font-size: 12px;
+    font-weight: 700;
+}
+.contact{
+    flex:1;
+}
+.contact ul{
+    align-self: flex-start;
+    list-style: none;   
+}
+.contact li{
+    font-size: 12px;
+    font-weight: 700;
+}
+@media screen and (max-width:600px) {
+   
+    .topfooter{
+        flex-wrap: wrap;
+    }
+    .blog{
+        flex-wrap: wrap;
+        flex: 1 1 100%;
+       
+    }
+    .location{
+        flex-wrap: wrap;
+        flex: 1 1 100%;
+    }
+    .contact{
+        flex-wrap: wrap;
+        flex: 1 1 100%;
+    }
+    .service{
+        flex-wrap: wrap;
+        flex: 1 1 100%;
+    }
+    
+}

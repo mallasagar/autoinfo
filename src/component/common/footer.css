@@ -1,0 +1,23 @@
+.bottomfooter{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    justify-content: center;
+    text-align: center;
+}
+.facebook{
+    flex: 1;
+    
+    text-align: right;
+    justify-self: baseline;
+}
+.instagram{
+    flex:1;
+  
+}
+.linkedin{
+    flex:1;
+ 
+    text-align: left;
+}
