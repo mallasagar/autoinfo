@@ -1,4 +1,4 @@
-
+import "./header.component.css"
 export function Myheader(){
 
    
@@ -6,9 +6,9 @@ export function Myheader(){
     return(
         //main header
     <div className="header">            
-                <div>Instagram</div>
-                <div>linkedin</div>
-                <div className="email">Email</div>
+                <div className="header-instagram">Instagram</div>
+                <div className="header-linkedin">linkedin</div>
+                <div className="header-email">Email</div>
     </div>            
          
                                         

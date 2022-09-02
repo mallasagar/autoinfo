@@ -1,16 +1,16 @@
-import { Link} from "react-router-dom"
+import { NavLink} from "react-router-dom"
+import "./navbar.component.css"
+import "../../root.css"
 
 export function MyNav(){
 
     return(
-        <div>
-                <ul className="navbar">
-                    <li className="logo"><Link to="/">AutoInfo</Link></li>
-                    <li className="twowheel"><Link to="/bike">Bike</Link></li>
-                    <li className="fourwheel"><Link to="/car">Car</Link></li>
-                    <li className="gallery"><Link to="/gallery">Gallery</Link></li>
-                    <li className="about"><Link to="/about">About</Link></li>
-                </ul>
-        </div>
+                <div className="navbar">
+                    <div className="logo"><NavLink to="/">AutoInfo</NavLink></div>
+                    <div className="twowheel"><NavLink to="/bike">Bike</NavLink></div>
+                    <div className="fourwheel"><NavLink to="/car">Car</NavLink></div>
+                    <div className="gallery"><NavLink to="/gallery">Gallery</NavLink></div>
+                    <div className="about"><NavLink to="/about">About</NavLink></div>
+                </div>
     )
 }

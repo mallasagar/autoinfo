@@ -1,0 +1,14 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+    padding: 5px;
+    background-color: rgb(50, 42, 78);
+}
+
+.header div{
+    margin-right: 15px;
+}
+.header-instagram{
+    margin-left: auto;
+}
