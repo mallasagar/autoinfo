@@ -1,15 +1,10 @@
 import React from "react";
 import  ReactDOM  from "react-dom";
-import { Myhome } from "./component/home/home.component";
+import {Myapp} from "./app"
 
 
 
-function App(){
-    return(
-        <>
-       <Myhome/>
-        </>
-    )
-}
 
-ReactDOM.render(<App/>, document.getElementById('autoinfo'));
+
+
+ReactDOM.render(<Myapp/>, document.getElementById('autoinfo'));

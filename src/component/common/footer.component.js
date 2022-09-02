@@ -5,8 +5,9 @@ export function Myfooter(){
     return(
         <div className="footer"> 
         
-            <div className="topfooter">
 
+        {/* this is an topfooter, use footer.component.css for styling */}
+            <div className="topfooter">
                 <div className="blog">
                                     <ul>
                                          Blog
@@ -46,7 +47,7 @@ export function Myfooter(){
 
 
 
-             
+             {/* this is an bottom footer, use footer.css for styling */}
             <div className="bottomfooter">
                 <div className="facebook">facebook</div>
                 <div className="instagram">instagram</div>
