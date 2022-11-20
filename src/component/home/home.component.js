@@ -1,13 +1,12 @@
-import { Myheader } from "../common/header.component"
-import {Myfooter} from "../common/footer.component"
-import { MyNav } from "../common/navbar.component"
+
+import "./home.component.css"
 export function Myhome(){
     return(
        <>
-       <Myheader/>
-       <MyNav></MyNav>
+     
+     
        this is home page
-       <Myfooter/>
+      
        </>
     )
 }

@@ -1,6 +1,8 @@
 import "./footer.component.css"
 import "./footer.css"
 
+
+
 export function Myfooter(){
     return(
         <div className="footer"> 
@@ -13,9 +15,9 @@ export function Myfooter(){
                                          Blog
                                         <li>News</li>
                                         <li>Upcoming</li>
-                                        <li> blog</li>
-                                        <li> blog</li>
+                                        <li> Blog</li>
                                     </ul>
+                                   
                 </div>
                 <div className="location">
                                     <ul>
