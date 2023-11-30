@@ -1,0 +1,72 @@
+<div  class="w-full">
+    <div class="flex flex-col items-center gap-6 font-serif font-bold">
+        <h3 class="text-2xl my-8 font-bold text-white ">Brand Name </h3>
+        <a routerLink="/admin/dashboard" [routerLinkActive]="'active'"> 
+            <div class="p-4  flex justify-around gap-2 items-center">
+            <fa-icon   [icon]="fadash" class="text-xl  "></fa-icon>
+            <h3 class=" ">Dashboard</h3>
+            </div>
+            </a>
+        <a routerLink="/admin/userslist" [routerLinkActive]="'active'" > 
+            <div class="p-2  flex justify-around gap-2 ">
+                <fa-icon [icon]="fauserlist" class="text-xl"></fa-icon>
+            <h3 class="">UserList</h3>
+            </div>
+            
+        </a>
+        <a routerLink="/admin/addproduct" [routerLinkActive]="'active'"> 
+            <div class="p-2  flex justify-around gap-1 ">
+                <fa-icon [icon]="facart"></fa-icon>
+            <h3 class="">AddProduct</h3>
+            </div>
+            
+        </a>
+        <a routerLink="/admin/editproduct" [routerLinkActive]="'active'"> 
+            <div class="p-2  flex justify-around gap-1 ">
+                <fa-icon [icon]="facart"></fa-icon>
+            <h3 class="">EditProduct</h3>
+            </div>
+        </a>
+            <div class="p-2  flex justify-around gap-1 " >
+                <fa-icon [icon]="falogout"></fa-icon>
+                <h3 class="" (click)="logout()">LogOut</h3>
+            </div>
+    </div>
+    
+</div>
+
+
+<!-- <div class="h-screen w-full">
+    <div class="flex  justify-center p-2 fixed h-screen bg-slate-400 ">
+        <div class=" flex flex-col items-start w-full  mt-8 mx-8 ">
+            <h2 class="text-2xl my-8 font-bold text-gray-900 ">Brand Name </h2>
+            <hr> 
+            <div class="flex flex-row items-baseline  w-full gap-2 justify-start "> -->
+                <!-- <img [src]="dashboardimg" class=" object-cover h-5 w-5 "> -->
+                <!-- <a routerLink="/admin/dashboard" [routerLinkActive]="'active'"> 
+                    <h3 class="">Dashboard</h3>
+                </a>
+            </div>
+            <div class="flex flex-row items-baseline  w-full gap-2 justify-start hover:opacity-60">
+                <a routerLink="/admin/addproduct" [routerLinkActive]="'active'"> 
+                    <h3>Add Product</h3>
+                </a>
+            </div>
+            <div class="flex flex-row items-baseline  w-full gap-2 justify-start hover:opacity-60">
+                <a routerLink="/admin/editproduct" [routerLinkActive]="'active'">
+                    <h3>Edit Product</h3>
+                </a>
+            </div>
+            <div class="flex flex-row items-baseline  w-full gap-2 justify-start hover:opacity-60">
+                <a routerLink="/admin/userlist" [routerLinkActive]="'active'">
+                    <h3>Users List</h3>
+                </a>
+            </div>
+            <div class="flex flex-row items-baseline  w-full gap-2 justify-start hover:opacity-60">
+                <a routerLink="/admin/order" [routerLinkActive]="'active'">
+                    <h3>Order</h3>
+                </a>
+            </div>
+        </div>
+    </div>
+</div> -->

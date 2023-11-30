@@ -1,0 +1,21 @@
+
+<div class="flex flex-col justify-around  w-full border rounded-lg" >
+    <section *ngFor="let item of userlist " class="w-full flex justify-around ">
+                <div class="flex flex-col  px-4 w-full border  ">
+                    <div>Name:{{item.username}}</div>
+                    <div>Address:{{item.useraddress}}</div>
+                    <div>Gender:{{item.usergender}}</div>
+                </div>
+                <div class="w-full border">
+                    <div>Email:{{item.useremail}}</div>
+                    <div>Contact:{{item.usercontact}}</div>
+                </div>
+                <div class="flex gap-4 px-4 items-center border w-full">
+                    <button class="p-4 border">Permission</button> 
+                    <button class="p-4 border " id="delete"  (click)='deleteuser( item.id)'>Delete</button>
+                </div> 
+    </section>
+</div>
+    
+
+

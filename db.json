@@ -1,0 +1,55 @@
+{
+  "users": [
+    {
+      "username": "sagar malla",
+      "useremail": "admin@gmail.com",
+      "userpassword": "admin",
+      "userrole": "admin",
+      "id": 1
+    },
+    {
+      "username": "john",
+      "useraddress": "ktm",
+      "usergender": "male",
+      "userage": 10,
+      "usercontact": "9818282838",
+      "useremail": "john@gmail.com",
+      "userrole": "user",
+      "userpassword": "john",
+      "id": 2
+    },
+    {
+      "username": "sample1",
+      "useraddress": "imadol",
+      "usergender": "male",
+      "userage": 12,
+      "usercontact": "9887162534",
+      "useremail": "sample1@gmail.com",
+      "userrole": "user",
+      "userpassword": "sample1",
+      "id": 3
+    },
+    {
+      "username": "sample2",
+      "useraddress": "ktm",
+      "usergender": "male",
+      "userage": 10,
+      "usercontact": "1234567890",
+      "useremail": "sample2@gmail.com",
+      "userrole": "user",
+      "userpassword": "sample2",
+      "id": 4
+    },
+    {
+      "username": "sample3",
+      "useraddress": "ktm",
+      "usergender": "female",
+      "userage": 1,
+      "usercontact": "1234567890",
+      "useremail": "sample3@gmail.com",
+      "userrole": "user",
+      "userpassword": "sample3",
+      "id": 5
+    }
+  ]
+}
