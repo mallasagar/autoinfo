@@ -13,20 +13,25 @@ import { UsersComponent } from './users/users.component';
 import { DeleteComponent } from './delete/delete.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
+import { AdmincustomerComponent } from './admincustomer/admincustomer.component';
 
 
 
 const routes: Routes = [
   {path:'',  component:AdminlayoutComponent,  children:[
-    { path: 'addproduct', component: AddproductComponent },
+    { path: 'customerlist', component: AdmincustomerComponent },
     { path: 'userslist', component:UsersComponent },
     { path: 'dashboard', component: DashboardComponent },
     { path: 'editproduct', component: EditproductComponent },
+    { path: '',   redirectTo: 'dashboard', pathMatch: 'full' },
+
   ]} 
 ];
 
   @NgModule({
-    declarations: [ AddproductComponent, EditproductComponent,DashboardComponent, AdminlayoutComponent, SidenavComponent, HeaderComponent, FooterComponent, UsersComponent, DeleteComponent,],
+    declarations: [ AddproductComponent, EditproductComponent,DashboardComponent,
+       AdminlayoutComponent, SidenavComponent, HeaderComponent, FooterComponent, 
+       UsersComponent, DeleteComponent,AdmincustomerComponent],
     imports: [CommonModule,RouterModule.forChild(routes),FontAwesomeModule, MatDialogModule,MatInputModule],
     providers:[]
 })

@@ -4,11 +4,14 @@
 @tailwind utilities;
 
 .active{
-    color: rgb(223, 49, 87);
+    color: rgb(23, 218, 5);
     font-weight: 600;
 }
+.profileicon-container {
+    @apply flex items-center justify-center bg-green-50  hover:text-green-300 rounded-full w-12 h-12 p-2 text-green-700 cursor-pointer;
+  }
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: rgb(241, 240, 234);}
+html, body { height: 100%; width: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

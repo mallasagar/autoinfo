@@ -1,0 +1,61 @@
+<!-- app.component.html -->
+<div class="flex justify-center mt-14 font-sans ">
+    <div class="bg-gray-50 p-8 rounded-md shadow-md my-20 shadow-green-400 w-full max-w-md hover:shadow-green-600 ">
+        <p class="text-2xl text-center font-semibold mb-6 ">SIGN UP</p>
+
+    <form class="user-form" #registercustomerdata="ngForm" (ngSubmit)="Registercustomer()">
+        <div class="form-group">
+      <label  class="block text-sm  mt-2 font-medium text-gray-600" for="username" >User Name:</label>
+      <input type="text" id="username" name="username" [(ngModel)]="customer.customername" required
+      class="mt-1 p-2 w-full border rounded-md shadow-md hover:shadow-green-300">
+      </div>
+  
+    <div class="form-group">
+      <label  class="block text-sm  mt-2 font-medium text-gray-600" for="useremail">User Email:</label>
+      <input type="email" id="useremail" name="useremail"  [(ngModel)]="customer.customeremail"required
+      class="mt-1 p-2 w-full border rounded-md shadow-md hover:shadow-green-300">
+    </div>
+  
+    <div class="form-group">
+      <label  class="block text-sm  mt-2 font-medium text-gray-600" for="useraddress">Address:</label>
+      <input type="text" id="useraddress" name="useraddress" [(ngModel)]="customer.customeraddress" required
+      class="mt-1 p-2 w-full border rounded-md shadow-md hover:shadow-green-300">
+    </div>
+  
+
+    <div class="form-group">
+        <div class="flex flex-row justify-between">
+            <div class="flex flex-col">
+                <label  class="block text-sm  mt-2 font-medium text-gray-600" for="age">Age:</label>
+                <input type="number" id="age" name="age" [(ngModel)]="customer.customerage" required
+                class="mt-1 p-2 w-full border rounded-md shadow-md hover:shadow-green-300">
+            </div>
+            <div class="flex flex-col">
+                <label class="block text-sm mt-2 font-medium text-gray-600" for="gender">Gender:</label>
+                <select id="gender" name="gender" [(ngModel)]="customer.customergender" required class="mt-1 p-2 w-full border rounded-md shadow-md hover:shadow-green-300">
+                  <option value="" disabled selected>Select Gender</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
+                </select>
+            </div>
+        </div>
+    </div>
+  
+
+<div class="form-group">
+    <label  class="block text-sm  mt-2 font-medium text-gray-600" for="usercontact">Contact:</label>
+    <input type="tel" id="usercontact" name="usercontact"[(ngModel)]="customer.customercontact" required
+    class="mt-1 p-2 w-full border rounded-md shadow-md hover:shadow-green-300">
+</div>
+
+<div class="form-group">
+    <label  class="block text-sm  mt-2 font-medium text-gray-600" for="password">Password:</label>
+    <input type="password" id="password" name="userpassword" [(ngModel)]="customer.customerpassword" required
+    class="mt-1 p-2 w-full border rounded-md shadow-md hover:shadow-green-300">
+</div>
+<input type="submit" class="bg-green-300 text-white p-2 mt-8 hover:bg-green-500 rounded-md w-full"
+ value="Register" [disabled]="!registercustomerdata.valid">
+</form>
+</div>
+</div>

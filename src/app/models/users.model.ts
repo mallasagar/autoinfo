@@ -1,8 +1,9 @@
 export class UserModel {
     username:string;
     useraddress:string;
-    usergender:string;
-    userage:string;
+    // usergender:string;
+    // userage:string;
+    userbrand:string;
     usercontact:string;
     useremail: string;
     userrole:string;
@@ -12,14 +13,18 @@ export class UserModel {
         usercontact:string, 
         useraddress:string, 
         userpassword: string, 
-        useremail: string, 
-        usergender:string, 
-        userage:string) {
+        useremail: string,
+         userbrand:string,
+        // usergender:string, 
+        // userage:string
+        )
+         {
       this.username = username;
       this.useraddress = useraddress;
-      this.usergender=usergender;
-      this.userage=userage;
+      // this.usergender=usergender;
+      // this.userage=userage;
       this.usercontact = usercontact;
+      this.userbrand = userbrand;
       this.useremail = useremail;
       this.userrole="user";
       this.userpassword = userpassword;

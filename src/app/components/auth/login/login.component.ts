@@ -3,6 +3,7 @@ import { ToastrService } from 'ngx-toastr';
 import { UserModel } from 'src/app/models/users.model';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { Router,NavigationEnd } from '@angular/router';
+import { UserroleService} from 'src/app/services/userrole.service';
 
 
 @Component({
@@ -12,11 +13,12 @@ import { Router,NavigationEnd } from '@angular/router';
 })
 export class LoginComponent {
   currentRoute: string='';
-  user:UserModel=new UserModel( '','', '', '', '' , '', '',);
+  user:UserModel=new UserModel( '','', '', '', '' , '', );
 
   constructor(private authservice: AuthenticationService,
               private route:Router, 
-              private toast: ToastrService){}
+              private toast: ToastrService,
+              private userroleservice:UserroleService){}
           
   LoginUser(){
     // check user email is valid or not
@@ -48,7 +50,9 @@ export class LoginComponent {
           localStorage.setItem('userrole',user.userrole);
           localStorage.setItem('isloggedin','true');
           this.authservice.getloggedinuserrole(user.username, user.userpassword, user.userrole)
+          this.userroleservice.setUserRole()
           this.resetlogin()
+          
         }
         else{
           this.toast.error("Invalid password")
@@ -61,7 +65,7 @@ export class LoginComponent {
 
 // reset login form
   resetlogin(){
-   this.user = new UserModel('','', '', '', '', '', '', );
+   this.user = new UserModel('','', '', '', '', '',  );
     }
 
 //checkuser roles

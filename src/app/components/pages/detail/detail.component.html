@@ -1,0 +1,20 @@
+<mat-dialog-content >
+    <div class="flex py-1 px-2 justify-end">
+        <button class=" text-red-600"mat-dialog-close="close">Close</button>
+    </div>    
+    <div  class="pt-8 pb-16 px-14 w-full  flex flex-row  gap-8 justify-start ">
+        <div class="flex flex-col w-5/12 gap-4 h-full">
+            <img src="{{ this.fooddetail.foodimageurl }}" alt="{{ this.fooddetail.foodname }}" class="  transition-transform transform hover:scale-110 duration-700">
+            <p class="text-center   text-xs mb-2">By:  {{ this.fooddetail.foodmakerbrand }}</p>
+        </div>
+        <div class=" w-5/12 text-start ms-auto">
+            <p class="text-4xl font-semibold mb-2 text-black">{{ this.fooddetail.foodname }}</p>
+             <div class="text-lg mt-4 mb-8 font-relaxed leading-3 ">
+                 <p class=" mb-2"><strong>Category : </strong><span class="text-sm"> {{ this.fooddetail.foodcategory }}</span></p>
+                 <p class=" mb-2"><strong>Cuisine :</strong><span class="text-sm">{{ this.fooddetail.foodcuisine }}</span></p>
+                 <p class=" mb-2 h-32 overflow-y-auto"><strong>Description:</strong> <span class=" text-sm ">{{ this.fooddetail.fooddescription }}</span></p>
+            </div>
+            <p class="text-red-600 font-bold mt-8 text-2xl">{{ this.fooddetail.foodprice | currency }}</p>
+        </div>
+    </div>    
+</mat-dialog-content> 

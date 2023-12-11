@@ -1,0 +1,14 @@
+button{background-color: rgb(143, 216, 134);
+    color:rgb(61, 55, 55);
+    padding:4px 20px;
+    border-radius: 10px;
+}
+button:hover{
+    background-color: rgb(87, 206, 71);
+}
+#delete{
+    background-color: rgb(212, 98, 98);
+}
+#delete:hover{
+    background-color: rgb(211, 73, 73);
+}

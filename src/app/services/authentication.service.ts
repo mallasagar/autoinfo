@@ -5,21 +5,25 @@ import { map } from 'rxjs/operators';
 import { API_BASE_URL, API_ENDPOINTS} from '../api.constant';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { UserroleService } from './userrole.service';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
   baseurl=API_BASE_URL;
+  
 
   adminrole= new BehaviorSubject<boolean>(false)
   userrole= new BehaviorSubject<boolean>(false)
+  admin= new BehaviorSubject<boolean>(false)
+  
 
 
 
-  constructor(private http:HttpClient, private route:Router, private toast:ToastrService) { }
+  constructor(private http:HttpClient, private route:Router, private toast:ToastrService, private userroleservice:UserroleService) { }
 
   checkEmailExists(): Observable<string[]> {
-    const url = `${this.baseurl}${API_ENDPOINTS.USERS}`;
+    const url = `${API_BASE_URL}${API_ENDPOINTS.USERS}`;
     return this.http.get<any[]>(url).pipe(
       map((data) => {
         return data.map((item) => item.useremail);
@@ -54,6 +58,7 @@ export class AuthenticationService {
   getloggedinuserrole(useremail:string, userpassword:string, role:string){
   if(role==="admin"){
     this.adminrole.next(true);
+    this.admin.next(true);
   }else if(role==='user'){
     this.userrole.next(true);
   }else{
@@ -61,23 +66,35 @@ export class AuthenticationService {
     this.adminrole.next(false);
     }
   }
+  
+  getuserbyid(id:number){
+    const url=`${this.baseurl}${API_ENDPOINTS.USERS}`
+    return this.http.get(`${url}/${id}`)
+  }
 
   deleteuser(id:number){
     const url=`${this.baseurl}${API_ENDPOINTS.USERS}`
-    return this.http.delete(`http://localhost:3000/users/${id}`)
+    return this.http.delete(`${url}/${id}`)
   }
-
+  // checkuser(role:string){
+  //   if(role==='admin'){
+  //     this.admin.next(true);
+  //   }else{
+  //     this.admin.next(false);
+  //   }
+  // }
   clearcredential(){
     if(this.userrole){
       this.userrole.next(false);
       this.route.navigate(['/login']);
-      localStorage.clear()
+      localStorage.clear();
       this.toast.success("Logout Successfully");
     }
     else if(this.adminrole){
       this.adminrole.next(false);}
+      localStorage.clear();
       this.route.navigate(['/login']);
-      localStorage.clear()
+      this.userroleservice.setUserRole;
       this.toast.success("Logout Successfully");
     }
 }

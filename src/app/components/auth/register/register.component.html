@@ -1,5 +1,5 @@
 <!-- app.component.html -->
-<div class="flex justify-center  font-sans  bg-green-50 ">
+<div class="flex justify-center  font-sans ">
     <div class="bg-gray-50 p-8 rounded-md shadow-md my-20 shadow-green-400 w-full max-w-md hover:shadow-green-600 ">
         <h2 class="text-2xl font-semibold mb-6 mx-auto">Login</h2>
 
@@ -7,6 +7,11 @@
         <div class="form-group">
       <label  class="block text-sm  mt-2 font-medium text-gray-600" for="username" >User Name:</label>
       <input type="text" id="username" name="username" [(ngModel)]="user.username" required
+      class="mt-1 p-2 w-full border rounded-md shadow-md hover:shadow-green-300">
+    </div>
+        <div class="form-group">
+      <label  class="block text-sm  mt-2 font-medium text-gray-600" for="username" >Brand Name:</label>
+      <input type="text" id="userbrand" name="userbrand" [(ngModel)]="user.userbrand" required
       class="mt-1 p-2 w-full border rounded-md shadow-md hover:shadow-green-300">
     </div>
   
@@ -22,7 +27,7 @@
       class="mt-1 p-2 w-full border rounded-md shadow-md hover:shadow-green-300">
     </div>
   
-    <div class="form-group">
+    <!-- <div class="form-group">
       <label  class="block text-sm  mt-2 font-medium text-gray-600" for="age">Age:</label>
       <input type="number" id="age" name="age" [(ngModel)]="user.userage" required
       class="mt-1 p-2 w-full border rounded-md shadow-md hover:shadow-green-300">
@@ -36,7 +41,7 @@
         <option value="female">Female</option>
         <option value="other">Other</option>
       </select>
-    </div>
+    </div> -->
 
 <div class="form-group">
     <label  class="block text-sm  mt-2 font-medium text-gray-600" for="usercontact">Contact:</label>

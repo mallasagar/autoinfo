@@ -1,0 +1,57 @@
+<form mat-dialog-content class="h-full w-full" #fooddata="ngForm" (ngSubmit)="updatefood()" >
+    <h2 mat-dialog-title>Create Foods</h2>
+
+    <div class="form-group">
+  <label  class="block text-sm  mt-2 font-medium text-gray-600" for="username" >Foodname:</label>
+  <input type="text" id="username" name="username" [(ngModel)]="food.foodname" required
+  class="mt-1 p-2 w-full border rounded-md shadow-md hover:shadow-green-300">
+</div>
+    <div class="form-group">
+  <label  class="block text-sm  mt-2 font-medium text-gray-600" for="foodimageurl" >Image Url:</label>
+  <input type="text" id="foodimageurl" name="foodimageurl" [(ngModel)]="food.foodimageurl" required
+  class="mt-1 p-2 w-full border rounded-md shadow-md hover:shadow-green-300">
+</div>
+<div class="form-group">
+    <label class="block text-sm mt-2 font-medium text-gray-600" for="category">Category:</label>
+    <select id="category" name="category" [(ngModel)]="food.foodcategory" required class="mt-1 p-2 w-full border rounded-md shadow-md hover:shadow-green-300">
+        <option value="" disabled selected>Select Food Category</option>
+        <option value="Snacks">Snacks</option>
+        <option value="foods">Foods</option>
+        <option value="drinks">Drinks</option>
+        <option value="sweets">Sweets</option>
+        <option value="none">none of above</option>
+    </select>
+</div> 
+<div class="form-group">
+    <label class="block text-sm mt-2 font-medium text-gray-600" for="cuisine">Cuisine:</label>
+    <select id="cuisine" name="cuisine" [(ngModel)]="food.foodcuisine" required class="mt-1 p-2 w-full border rounded-md shadow-md hover:shadow-green-300">
+      <option value="" disabled selected>Select Cuisine</option>
+      <option value="Nepali Cuisine: ">Nepali Cuisine </option>
+      <option value="Indian Cuisine: ">Indian Cuisine </option>
+      <option value="Italian Cuisine">Italian Cuisine</option>
+      <option value="French Cuisine">French Cuisine</option>
+      <option value="American Cuisine:">American Cuisine</option>
+      <option value="Chinese Cuisine:">Chinese Cuisine</option>
+      <option value="Japanese Cuisine:">Japanese Cuisine</option>
+      <option value="Thai Cuisine:">Thai Cuisine</option>
+      <option value="Mexican Cuisine:">Mexican Cuisine</option>
+      <option value="none">None of above</option>
+    </select>
+  </div> 
+<div class="form-group">
+    <label  class="block text-sm  mt-2 font-medium text-gray-600" for="fooddescription"> Description</label>
+    <input type="text" id="fooddescription" name="fooddescription "[(ngModel)]="food.fooddescription" required
+    class="mt-1 p-2 w-full border rounded-md shadow-md hover:shadow-green-300">
+  </div>
+
+
+  <div class="form-group">
+    <label  class="block text-sm  mt-2 font-medium text-gray-600" for="foodprice" >Price:</label>
+    <input type="text" id="foodprice" name="foodprice" [(ngModel)]="food.foodprice" required
+    class="mt-1 p-2 w-full border rounded-md shadow-md hover:shadow-green-300">
+  </div>
+
+
+<input type="submit" class="bg-green-300 text-white p-2 mt-8 hover:bg-green-500 rounded-md w-full"
+value="updatefood" mat-dialog-close="close" [disabled]="!fooddata.valid" >
+</form>

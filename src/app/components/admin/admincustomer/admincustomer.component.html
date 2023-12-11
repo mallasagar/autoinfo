@@ -1,0 +1,16 @@
+<div class="flex flex-col justify-around  w-full border rounded-lg" >
+    <section *ngFor="let item of customerlist " class="w-full flex justify-around border-b-2 border-gray-300 mt-4">
+                <div class="flex flex-col  px-4 w-full   ">
+                    <div>Name:{{item.customername}}</div>
+                    <div>Address:{{item.customeraddress}}</div>
+                </div>
+                <div class="w-full ">
+                    <div>Email:{{item.customeremail}}</div>
+                    <div>Contact:{{item.customercontact}}</div>
+                </div>
+                <div class="flex gap-4 px-4 items-center w-full">
+                    <button class="p-4 border">Permission</button> 
+                    <button class="p-4 border " id="delete"  (click)='Deletecustomer(item.id )'>Delete</button>
+                </div> 
+    </section>
+</div>

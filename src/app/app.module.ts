@@ -9,8 +9,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component'
 import { HttpClientModule } from '@angular/common/http';
-import { ContactComponent } from './components/pages/contact/contact.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { CustomerComponent } from './components/customer/customer.component';
 // import { HighlightDirective } from './directives/mainlayout.directive';
 
 
@@ -20,7 +20,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    ContactComponent,
+    CustomerComponent,
     // HighlightDirective
   ],
   imports: [

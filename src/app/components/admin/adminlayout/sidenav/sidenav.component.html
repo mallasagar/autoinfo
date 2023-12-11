@@ -1,6 +1,6 @@
 <div  class="w-full">
     <div class="flex flex-col items-center gap-6 font-serif font-bold">
-        <h3 class="text-2xl my-8 font-bold text-white ">Brand Name </h3>
+        <span class=" my-8 font-bold text-2xl text-white ">{{title}} </span>
         <a routerLink="/admin/dashboard" [routerLinkActive]="'active'"> 
             <div class="p-4  flex justify-around gap-2 items-center">
             <fa-icon   [icon]="fadash" class="text-xl  "></fa-icon>
@@ -10,21 +10,21 @@
         <a routerLink="/admin/userslist" [routerLinkActive]="'active'" > 
             <div class="p-2  flex justify-around gap-2 ">
                 <fa-icon [icon]="fauserlist" class="text-xl"></fa-icon>
-            <h3 class="">UserList</h3>
+            <h3 class="">User List</h3>
             </div>
             
         </a>
-        <a routerLink="/admin/addproduct" [routerLinkActive]="'active'"> 
+        <a routerLink="/admin/customerlist" [routerLinkActive]="'active'"> 
             <div class="p-2  flex justify-around gap-1 ">
-                <fa-icon [icon]="facart"></fa-icon>
-            <h3 class="">AddProduct</h3>
+                <fa-icon [icon]="fauserlist" class="text-xl"></fa-icon>
+            <h3 class="">Customer List</h3>
             </div>
             
         </a>
         <a routerLink="/admin/editproduct" [routerLinkActive]="'active'"> 
             <div class="p-2  flex justify-around gap-1 ">
                 <fa-icon [icon]="facart"></fa-icon>
-            <h3 class="">EditProduct</h3>
+            <h3 class="">Edit Product</h3>
             </div>
         </a>
             <div class="p-2  flex justify-around gap-1 " >

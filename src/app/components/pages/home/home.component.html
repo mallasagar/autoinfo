@@ -1,3 +1,88 @@
-<p>home works!</p>
-<p  appHighlight>Hero</p>
-<div appHighlight>Hero</div>
+<div class="w-full bg-gray-50  mt-18">
+    <div class="rounded  mt-24 w-full  flex flex-row sm-flex-col md:flex-row flex-wrap content-center gap-6 justify-center my-8 " >
+        <div class="flex flex-col justify-start w-10/12 sm:w-8/12 md:w-2/12 rounded-lg align-middle  overflow-hidden shadow-lg content-center items-center hover:bg-gray-200 bg-gray-100 my-4" 
+        *ngFor="let item of foodlist.slice(startIndex, endIndex)">
+      <div class="flex justify-end w-11/12 my-0 ">
+  
+        <button class="bg-blue-300 hover:bg-blue-500 float-right  text-white  border border-blue-400 font-bold py-2 px-4 my-2 rounded-full"  >
+        </button>
+      </div>
+      <div class="relative overflow-hidden w-50 h-40">
+        <!-- <img class="" src="your-image.jpg" alt="Image" /> -->
+        <img class=" transition-transform transform hover:scale-110 duration-700" src={{item.foodimageurl}} alt="Product Image">
+      </div>
+      
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2">{{item.foodname}}</div>
+     
+        <p class="text-gray-700 text-base">
+          Price : $ {{item.foodprice}}     </p>
+        
+        </div>
+       
+        
+        <div class=" flex flex-row gap-2 justify-evenly px-1 pb-4 pt-2">
+          <button class="bg-transparent border border-blue-500  shadow-inner text-black hover:bg-blue-600 hover:text-white font-bold py-2 px-4 rounded-full" 
+          (click)="viewfood(item.id)">
+            Learn More
+          </button>
+          <button class="bg-transparent border border-green-500 shadow-xl text-black hover:bg-green-600 hover:text-white font-bold py-2 px-4 rounded-full" >
+            Buy
+          </button>
+        </div>
+        <p class="text-gray-500  text-xs my-4">
+            from :{{item.foodmakerbrand}}     </p>
+       
+      </div>
+    </div>
+    <div class="flex justify-center mb-8 ">
+        <button
+          class="bg-blue-300 hover:bg-blue-500 mb-8 text-white border border-blue-400 font-bold py-2 px-4 mx-1 rounded-full"
+          *ngFor="let page of getPages()"
+          (click)="changePage(page)"
+        >
+          {{ page }}
+        </button>
+      </div>
+</div>
+
+
+<h1 class="text-center">Drink</h1>
+<div class="w-full bg-gray-50 py-8 mt-8">
+<div class="rounded  w-full  flex flex-row sm-flex-row md:flex-row flex-wrap content-center gap-6 justify-center my-8" >
+    <div class="flex flex-col justify-center  sm:w-6/12 md:w-2/12 rounded-lg align-middle  overflow-hidden shadow-lg content-center items-center hover:bg-gray-200 bg-gray-100 my-4" 
+     *ngFor="let item of drinklist ">
+      <div class="flex justify-end w-11/12 my-0 ">
+  
+        <button class="bg-blue-300 hover:bg-blue-500 float-right  text-white  border border-blue-400 font-bold py-2 px-4 my-2 rounded-full"  >
+        </button>
+      </div>
+      <div class="relative overflow-hidden w-50 h-40">
+      <img class=" transition-transform transform hover:scale-110 duration-700" src={{item.foodimageurl}} alt="Product Image">
+    </div>
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2">{{item.foodname}}</div>
+     
+        <p class="text-gray-700 text-base">
+          Price : $ {{item.foodprice}}     </p>
+        </div>
+       
+        
+        <div class=" flex flex-row gap-2 justify-evenly px-1 pb-4 pt-2">
+          <button class="bg-transparent border border-blue-500  shadow-inner text-black hover:bg-blue-600 hover:text-white font-bold py-2 px-4 rounded-full" (click)="viewfood(item.id)" >
+            Learn More
+          </button>
+          <button class="bg-transparent border border-green-500 shadow-xl text-black hover:bg-green-600 hover:text-white font-bold py-2 px-4 rounded-full" >
+            Buy
+          </button>
+        </div>
+        <p class="text-gray-500  text-sm">
+            from :{{item.foodmakerbrand}}     </p>
+      </div>
+    </div>
+</div>
+
+
+<app-about></app-about>
+<app-contact></app-contact>
+

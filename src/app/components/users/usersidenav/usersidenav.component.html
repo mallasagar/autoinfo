@@ -1,0 +1,29 @@
+<div  class="w-full">
+    <div class="flex flex-col items-center gap-6 font-serif font-bold">
+        <span class=" my-8 font-bold text-2xl text-white " >{{brandname}} </span>
+        <a routerLink="/user/dashboard" > 
+            <div class="p-4  flex justify-around gap-2 items-center">
+            <h3 class=" ">Dashboard</h3>
+            </div>
+            </a>
+        <a routerLink="/admin/userslist" > 
+            <div class="p-2  flex justify-around gap-2 ">
+            <h3 class="">UserList</h3>
+            </div>
+        </a>
+        <a routerLink="/user/addfoods" > 
+            <div class="p-2  flex justify-around gap-1 ">
+            <h3 class="">Add Foods</h3>
+            </div>
+        </a>
+        <a routerLink="/admin/editproduct" > 
+            <div class="p-2  flex justify-around gap-1 ">
+            <h3 class="">EditProduct</h3>
+            </div>
+        </a>
+            <div class="p-2  flex justify-around gap-1 " >
+                <h3 class="" (click)="logout()">LogOut</h3>
+            </div>
+    </div>
+    
+</div>

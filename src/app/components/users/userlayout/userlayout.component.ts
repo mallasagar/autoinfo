@@ -16,16 +16,7 @@ export class UserlayoutComponent {
   
   }
 
-  click(){
-    // this.toastr.success("Hello Worlds!");
-    // this.toastr.info("Hello Worlds!");
-    // this.toastr.show("Hello Worlds!");
-    // this.toastr.error("Hello Worlds!");
-    // this.toastr.clear(20);
-    this.toastr.warning("Hello Worlds!");
-  }
-  logout(){
-    this.authservice.clearcredential()
-  }
+
+ 
  
 }

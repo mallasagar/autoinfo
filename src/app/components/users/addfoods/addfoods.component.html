@@ -1,0 +1,43 @@
+<div class="flex flex-col gap-4">
+    <div class="flex justify-end">
+        <button class="bg-blue-300 rounded-lg py-2 px-8" (click)="createfood()">Create Foods</button>
+    </div>
+    <div >
+       
+        <table class="w-full " >
+            <!-- <section *ngFor="let item of allfoodlist " class="w-full flex justify-around border-b-2 border-gray-300 mt-4"> -->
+                <!-- <div>{{ item.serialNumber }}</div> -->
+               <thead class="w-11/12 h-auto text-center ">
+                
+                        <tr class="flex  text-center bg-green-500">
+                            <td class="w-1/12">S.N</td>
+                            <td class="w-2/12">Food Name:</td>
+                            <td class="w-3/12">Food Pic:</td>
+                            <td class="w-2/12">Food Description:</td>
+                            <td class="w-1/12">Food price:</td>
+                            <td class="w-2/12">Modify</td>
+                        </tr>
+               </thead>
+               <tbody class="text-center flex flex-col gap-4  ">
+                        <tr *ngFor="let item of allfoodlist" class="flex text-center border-2  items-center h-60" >
+                            <td class="w-1/12 ">{{item.serialNumber}}</td>
+                            <td class="w-2/12">{{item.foodname}}</td>
+                            <td class="w-3/12 self-center">
+                                <img [src]="item.foodimageurl" alt="Food Image" height="250" width="320">
+                            </td>
+                            <td class="w-2/12">
+                                Category:{{item.foodcategory}},<br>
+                                Cuisine:{{item.foodcuisine}}<br>
+                                Description:{{item.fooddescription}}
+                            </td>
+                            <td class="w-1/12">$ {{item.foodprice}}</td>
+                            <td class="w-2/12 " ><span (click)="deletefood(item.id)">Delete</span>
+                                                <span class="ms-4" (click)="editfood(item.id)">edit food</span>
+                            </td>
+                        </tr>
+               </tbody>
+        </table>
+            
+    </div>
+
+</div>
