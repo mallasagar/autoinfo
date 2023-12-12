@@ -1,0 +1,15 @@
+<mat-dialog-content class="bg-green-50">
+    <div class="flex py-1 px-2 justify-end">
+        <button class=" text-red-600"mat-dialog-close="close">Close</button>
+    </div>    
+    <div  class="pt-8 pb-16  w-full  flex flex-row  gap-8 justify-start ">
+        <div class=" w-10/12 pe-28 flex flex-col justify-start">
+            <p class="text-4xl font-semibold mb-2 text-black">{{ this.data.customername }}</p>
+            <p class=" mb-2"><strong>Email :</strong><span class="text-sm">{{ this.data.customeremail }}</span></p>
+            <p class=" mb-2"><strong>Address : </strong><span class="text-sm"> {{ this.data.customeraddress }}</span></p>
+            <p class=" mb-2  "><strong>Contact:</strong> <span class=" text-sm ">{{ this.data.customercontact}}</span></p>
+            <p class=" mb-2  "><strong>Gender:</strong> <span class=" text-sm ">{{ this.data.customergender}}</span></p>
+            <p class=" mb-2  "><strong>Age</strong> <span class=" text-sm ">{{ this.data.customerage}}</span></p>
+        </div>
+    </div>    
+</mat-dialog-content> 

@@ -177,7 +177,7 @@
     {
       "foodname": "Hamburger ",
       "foodimageurl": "https://th.bing.com/th/id/R.75da52ac2fae672e58b6fc94092a7d1f?rik=0%2bIK67BDlvzIJQ&riu=http%3a%2f%2fblog.timesunion.com%2fopinion%2ffiles%2f2012%2f03%2f0316_WVfastfood1.jpg&ehk=sosdPKIVvgUrguU4KjcfoaGLaFyXRS9la%2bCYvJy1OrY%3d&risl=&pid=ImgRaw&r=0",
-      "foodprice": "345",
+      "foodprice": "340",
       "quantity": 1,
       "foodmakerstatus": "",
       "foodmakeraddress": "tinkune",
@@ -385,21 +385,6 @@
       "id": 17
     },
     {
-      "foodname": "Peanut",
-      "foodimageurl": "https://www.google.com/imgres?imgurl=https%3A%2F%2Fchaosofflavor.com%2Fwp-content%2Fuploads%2F2022%2F12%2F32-2.png&tbnid=iNPlULBdd8urFM&vet=12ahUKEwiameL2h_iCAxUq9qACHcj4AHAQMygAegQIARBJ..i&imgrefurl=https%3A%2F%2Fchaosofflavor.com%2Fnepali-peanut-sadeko-recipe%2F&docid=Frwo0p2uhh4k3M&w=700&h=800&q=peanut%20sadheko&ved=2ahUKEwiameL2h_iCAxUq9qACHcj4AHAQMygAegQIARBJ",
-      "foodprice": "210",
-      "quantity": 1,
-      "foodmakerstatus": "",
-      "foodmakeraddress": "tinkune",
-      "foodmakerbrand": "Hamrosan Resturant",
-      "foodmakercontact": "9812283746",
-      "userid": 4,
-      "foodcategory": "foods",
-      "foodcuisine": "Nepali Cuisine: ",
-      "fooddescription": "peanut mixed with spices",
-      "id": 18
-    },
-    {
       "foodname": "Yomari",
       "foodimageurl": "data:image/jpeg;base64,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",
       "foodprice": "199",
@@ -409,7 +394,7 @@
       "foodmakerbrand": "Hamrosan Resturant",
       "foodmakercontact": "9812283746",
       "userid": 4,
-      "foodcategory": "foods",
+      "foodcategory": "Snacks",
       "foodcuisine": "Nepali Cuisine: ",
       "fooddescription": "Yomari, also called yamari,  is a delicacy of the Newar community in Nepal. It is a steamed dumpling that consists of an external covering of rice flour with sweet fillings such as chaku and khuwa. ",
       "id": 19
@@ -488,6 +473,36 @@
       "foodcuisine": "Nepali Cuisine: ",
       "fooddescription": "chicken item",
       "id": 24
+    },
+    {
+      "foodname": "ButterScotch Ice Cream",
+      "foodimageurl": "https://images.delightedcooking.com/slideshow-mobile-small/hard-coffee-ice-cream.jpg",
+      "foodprice": "150",
+      "quantity": 1,
+      "foodmakerstatus": "",
+      "foodmakeraddress": "tinkune",
+      "foodmakerbrand": "Hamrosan Resturant",
+      "foodmakercontact": "9812283746",
+      "userid": 4,
+      "foodcategory": "sweets",
+      "foodcuisine": "none",
+      "fooddescription": "Butterscotch ice cream typically refers to any type of ice cream that contains an element of butterscotch. Typically, most ice cream flavors that have this name combine the ingredients needed to make butterscotch with the ingredients needed to make ice cream, creating a consistent butterscotch flavor throughout the entire frozen dessert. Some ice cream manufacturers, however, refer to butterscotch ice cream as an ice cream flavor that contains liquid ripples of butterscotch or hard chunks of butterscotch candy.",
+      "id": 25
+    },
+    {
+      "foodname": "French Fries",
+      "foodimageurl": "https://www.indianhealthyrecipes.com/wp-content/uploads/2021/04/french-fries-recipe.jpg",
+      "foodprice": "150",
+      "quantity": 1,
+      "foodmakerstatus": "",
+      "foodmakeraddress": "tinkune",
+      "foodmakerbrand": "Hamrosan Resturant",
+      "foodmakercontact": "9812283746",
+      "userid": 4,
+      "foodcategory": "snacks",
+      "foodcuisine": "French Cuisine",
+      "fooddescription": "French fries, chips, finger chips, french-fried potatoes, or simply fries, are batonnet or allumette-cut deep-fried potatoes of disputed origin from Belgium or France. They are prepared by cutting potatoes into even strips, drying them, and frying them, usually in a deep fryer.",
+      "id": 27
     }
   ]
 }

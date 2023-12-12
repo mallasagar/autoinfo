@@ -24,18 +24,6 @@ export class UserroleService {
   }
  
 }
-   
-  // constructor(private route: Router) { }
-
-  // checkcurrentroute(){
-  //   this.route.events.subscribe((event) => {
-  //     if (event instanceof NavigationEnd) {
-  //       this.currentRoute = event.url;
-  //       console.log('Current Route:', this.currentRoute);
-  //     }
-  //   })
-  // }
-
 
 
 

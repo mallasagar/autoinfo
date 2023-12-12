@@ -26,6 +26,18 @@ getalldrinks(){
             map((data)=>{return data.filter((item)=>(item.foodcategory==='drinks'))})
         )
 }
+getallsnacks(){
+    const url = `${API_BASE_URL}${API_ENDPOINTS.FOODS}`;
+    return this.http.get<any[]>(url).pipe(
+        map((data)=>{return data.filter((item)=>(item.foodcategory==='snacks'))})
+    )
+}
+getallsweets(){
+    const url = `${API_BASE_URL}${API_ENDPOINTS.FOODS}`;
+    return this.http.get<any[]>(url).pipe(
+        map((data)=>{return data.filter((item)=>(item.foodcategory==='sweets'))})
+    )
+}
 
 getfoodbyid(id:number){
     const url = `${API_BASE_URL}${API_ENDPOINTS.FOODS}`;

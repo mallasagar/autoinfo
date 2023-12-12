@@ -16,6 +16,11 @@ export class CustomerService {
 
 
   
+getcustomerbyid(id:number){
+  const url = `${API_BASE_URL}${API_ENDPOINTS.CUSTOMERS}`;
+  return this.http.get(`${url}/${id}`)
+  
+}
 
   checkcustomeremail(){
       const url = `${API_BASE_URL}${API_ENDPOINTS.CUSTOMERS}`;

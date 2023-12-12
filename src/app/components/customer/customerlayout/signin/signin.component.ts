@@ -10,7 +10,7 @@ import { NavbarComponent } from 'src/app/shared/navbar/navbar.component';
   templateUrl: './signin.component.html',
   styleUrls: ['./signin.component.css']
 })
-export class SigninComponent {
+export class SigninComponent  {
 constructor(private route: Router, private customerservice: CustomerService, private toast: ToastrService){
 
 }

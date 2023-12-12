@@ -15,7 +15,7 @@ export class DeletefoodsComponent {
   }
 
   confirmdeletefood(){
-    this.foodservice.deletefood(this.data.userid)
+    this.foodservice.deletefood(this.data.foodid)
     .subscribe((success)=>{
       if(success){
         this.toast.success("successfully deleted")

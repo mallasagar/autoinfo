@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { CustomerlayoutComponent } from './customerlayout/customerlayout.component';
-import { CustomerComponent } from './customer.component';
 import { HomeComponent } from '../pages/home/home.component';
 import { ContactComponent } from '../pages/contact/contact.component';
 import { AboutComponent } from '../pages/about/about.component';
@@ -12,15 +11,17 @@ import { SignupComponent } from './customerlayout/signup/signup.component';
 import { FormsModule } from '@angular/forms';
 import { DetailComponent } from '../pages/detail/detail.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import {  MatDialogModule } from '@angular/material/dialog';
 import { MatCommonModule } from '@angular/material/core';
+import { MatMenuModule } from '@angular/material/menu';
+import { CustomerprofileComponent } from './customerprofile/customerprofile.component';
+
 const routes: Routes = [
   {path:'',component:CustomerlayoutComponent  ,children:[
     { path: 'home', component:HomeComponent  },
-    // {path:'contact', component:ContactComponent},
-    // {path:'about', component:AboutComponent},
     {path:'signup', component:SignupComponent},
     {path:'signin', component:SigninComponent},
+    { path: 'category',  loadChildren:()=>import('../pages/category/category.module').then((m)=>m.CategoryModule)},
     { path: '',   redirectTo: '/home', pathMatch:  'full' },
   ]
   }
@@ -28,8 +29,8 @@ const routes: Routes = [
 
 
 @NgModule({
-  declarations: [CustomerlayoutComponent, NavbarComponent, HomeComponent, AboutComponent, ContactComponent, SigninComponent,SignupComponent, DetailComponent],
-  imports: [CommonModule,RouterModule.forChild(routes),FontAwesomeModule,FormsModule,MatCommonModule, MatDialogModule],
+  declarations: [CustomerlayoutComponent, NavbarComponent, HomeComponent, AboutComponent, ContactComponent, SigninComponent,SignupComponent, DetailComponent, CustomerprofileComponent],
+  imports: [CommonModule,RouterModule.forChild(routes),FontAwesomeModule,FormsModule,MatCommonModule,MatMenuModule, MatDialogModule],
   providers:[],
   exports:[]
 

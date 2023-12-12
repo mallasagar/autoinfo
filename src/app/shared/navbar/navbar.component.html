@@ -2,7 +2,28 @@
     <div class=" sm:2/12 md:4/12  md:ms-12 ms-4 items-center  ">
         <div class="md:text-3xl sm:text-lg text-md font-bold font-serif text-orange-600"><a routerLink="/home"  >HamroResturant</a></div>
     </div>
+   
     <div class="navmenu sm-8/12 md:w-6/12 md:flex  hidden justify-start gap-8  items-center text-base">
+        <div class="flex ">
+            <button type="button" [matMenuTriggerFor]="FoodCategory">Category
+            </button>
+            <fa-icon [icon]="fadown"  class="  text-orange-700  font-semibold   ms-2  text-2xl" ></fa-icon>
+
+        </div>
+         <mat-menu #FoodCategory  yPosition="above">
+            <a routerLink="category/snacks" [routerLinkActive]="'active'">
+                <menu mat-menu-item class="  text-orange-700 hover:text-orange-600 font-semibold     text-2xl" ><fa-icon [icon]="fasnack" class="text-orange-400 me-2"  ></fa-icon>Snack </menu>
+            </a>
+            <a routerLink="category/foods" [routerLinkActive]="'active'">
+                <menu mat-menu-item class="  text-orange-700 hover:text-orange-600 font-semibold    text-2xl"><fa-icon [icon]="fafood" class="text-orange-400 me-2"    ></fa-icon>Food</menu>
+            </a>
+            <a routerLink="category/sweets" [routerLinkActive]="'active'">
+                <menu mat-menu-item class="  text-orange-700 hover:text-orange-600 font-semibold     text-2xl"><fa-icon [icon]="fasweet" class="text-orange-400 me-2"   ></fa-icon>Sweets</menu>
+            </a>
+            <a routerLink="category/drinks" [routerLinkActive]="'active'">
+                <menu mat-menu-item class="  text-orange-700 hover:text-orange-600 font-semibold     text-2xl"><fa-icon [icon]="fadrink" class="text-orange-400 me-2"   ></fa-icon>Drink</menu>
+            </a>
+         </mat-menu>
         <form class="self-start w-full items-center">
             <input type="search " class="w-6/12 h-10 rounded-lg " placeholder="  Search">
             <button  class="ms-4 bg-green-200 hover:bg-green-400 text-black font-bold py-1 px-4 md:py-2 md:px-3 rounded-full focus:outline-none focus:shadow-outline-green">Search</button>
@@ -11,22 +32,27 @@
             <!-- <div *ngIf="!isloggedin"><a routerLink="about" [routerLinkActive]="'active'">About</a></div>
             <div *ngIf="!isloggedin"><a routerLink="contact" [routerLinkActive]="'active'">Contact</a></div> -->
             <div class="flex gap-6  justify-end md-ms-auto items-baseline   text-black" >
-                    <button *ngIf="!customerloggedin" class="  text-green-700 hover:text-green-300 font-semibold     text-md"><a routerLink="signup" [routerLinkActive]="'active'">Signup</a></button>
-                    <button *ngIf="!customerloggedin" class="  text-green-700 hover:text-green-300 font-semibold     text-md " ><a routerLink="signin" [routerLinkActive]="'active'">SignIn</a></button>
+                    <button *ngIf="!customerloggedin" class="  text-green-700 hover:text-green-600 font-semibold     text-md"><a routerLink="signup" [routerLinkActive]="'active'">Signup</a></button>
+                    <button *ngIf="!customerloggedin" class="  text-green-700 hover:text-green-600 font-semibold     text-md " ><a routerLink="signin" [routerLinkActive]="'active'">SignIn</a></button>
+                    
+                </div>
+                <button type="button" [matMenuTriggerFor]="settingsMenu">
                     <fa-icon [icon]="faprofile"  *ngIf="customerloggedin" class=" profileicon-container text-black font-semibold  text-2xl bg-green-500 "  ></fa-icon>
-                    <fa-icon [icon]="falogout"  *ngIf="customerloggedin" class="  text-green-700 hover:text-green-300 font-semibold     text-2xl" (click)="customerloggedout()" ></fa-icon>
+                </button>
+                <mat-menu #settingsMenu>
+                    <menu mat-menu-item (click)="viewcustomerprofile()" class="  text-orange-700 hover:text-orange-600 font-semibold     text-2xl"><fa-icon [icon]="faprofile" class="text-orange-400 me-2"   ></fa-icon>Profile</menu>
+                    <a routerLink="category/favourite" [routerLinkActive]="'active'">
+                        <menu mat-menu-item class="  text-orange-700 hover:text-orange-600 font-semibold     text-2xl"><fa-icon [icon]="fafavroute" class="text-orange-400 me-2"   ></fa-icon> Favourite</menu>
+                    </a>
+                    <a routerLink="category/order" [routerLinkActive]="'active'">
+                        <menu mat-menu-item class="  text-orange-700 hover:text-orange-600 font-semibold     text-2xl"><fa-icon [icon]="faorder" class="text-orange-400 me-2"   ></fa-icon> Order</menu>
+                    </a>
+                    <a routerLink="category/orderstatus" [routerLinkActive]="'active'">
+                        <menu mat-menu-item class="  text-orange-700 hover:text-orange-600 font-semibold     text-2xl"><fa-icon [icon]="faorderstatus" class="text-orange-400 me-2"   ></fa-icon> Delivery Status</menu>
+                    </a>
+                        <menu mat-menu-item (click)="customerloggedout()"*ngIf="customerloggedin" class="  text-orange-700 hover:text-orange-600 font-semibold     text-2xl"><fa-icon [icon]="falogout" class="text-orange-400 me-2"   ></fa-icon> LogOut</menu>
+                   
+
+                </mat-menu>
             </div>
     </div>
-    
-</div>
-<!-- <div class="mobilenav md:hidden lg:hidden flex flex-col bg-gray-500 py-4 " *ngIf="toggle">
-        <div  class="w-full bg-gray-500 hover:bg-gray-400 ps-4 " (click)="changetogglestate()"><a routerLink=""  [routerLinkActiveOptions]="{exact:true}"  [routerLinkActive]="'active'">Home</a></div>
-        <div *ngIf="!isloggedin" class="w-full bg-gray-500 ps-4" (click)="changetogglestate()"><a routerLink="/about" [routerLinkActive]="'active'" >About</a></div>
-        <div *ngIf="!isloggedin" class="w-full bg-gray-500 ps-4" (click)="changetogglestate()"><a routerLink="/contact" [routerLinkActive]="'active'">Contact</a></div>
-
-
-        
-        
-        <div *ngIf="isloggedin" class="w-full bg-gray-500 ps-4" (click)="changetogglestate()"><a routerLink="myorders" [routerLinkActive]="'active'">My Orders</a></div>
-        <div *ngIf="isloggedin" class="w-full bg-gray-500 ps-4" (click)="changetogglestate()"><a routerLink="mycart" [routerLinkActive]="'active'">My Carts</a></div>
-    </div> -->
