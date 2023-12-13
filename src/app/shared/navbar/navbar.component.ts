@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter, } from '@angular/core';
 import { faBars,faXmark, faRightFromBracket, faCookieBite, faBowlFood, faWater, faWineBottle, faCaretDown, faHeart, faParachuteBox, faTruckFast, faBoxesPacking, faBoxOpen} from '@fortawesome/free-solid-svg-icons';
 import { faUser,faCake } from '@fortawesome/free-solid-svg-icons';
 // import { ProfileComponent } from 'src/app/pages/profile/profile.component';
@@ -43,14 +43,23 @@ export class NavbarComponent {
   menu:boolean = true;
   userdata:any;
   cartnumber:any;
+  searchterm:string=''
 
 constructor( private matdialog: MatDialog,private customerservice: CustomerService, private toast:ToastrService,private authservice:AuthenticationService
    ){}
 
-  ngOnInit(): void {
-    this.getcustomerinfo()
+
    
-}
+   ngOnInit(): void {
+     this.getcustomerinfo() 
+    }
+    
+    @Output()searchtextchanged:EventEmitter<string>=new EventEmitter<string>();
+
+    onSearchTextChanged(){
+     
+      this.searchtextchanged.emit(this.searchterm);
+    }
 
   
   getcustomerinfo(){

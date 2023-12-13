@@ -24,10 +24,7 @@
                 <menu mat-menu-item class="  text-orange-700 hover:text-orange-600 font-semibold     text-2xl"><fa-icon [icon]="fadrink" class="text-orange-400 me-2"   ></fa-icon>Drink</menu>
             </a>
          </mat-menu>
-        <form class="self-start w-full items-center">
-            <input type="search " class="w-6/12 h-10 rounded-lg " placeholder="  Search">
-            <button  class="ms-4 bg-green-200 hover:bg-green-400 text-black font-bold py-1 px-4 md:py-2 md:px-3 rounded-full focus:outline-none focus:shadow-outline-green">Search</button>
-        </form>
+            <input  class="w-6/12 h-10 rounded-lg "  [(ngModel)]="searchterm" placeholder="Search..." (input)="onSearchTextChanged()">
         
             <!-- <div *ngIf="!isloggedin"><a routerLink="about" [routerLinkActive]="'active'">About</a></div>
             <div *ngIf="!isloggedin"><a routerLink="contact" [routerLinkActive]="'active'">Contact</a></div> -->

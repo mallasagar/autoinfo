@@ -13,12 +13,15 @@ createfood(data: any): Observable<any>{
     const url = `${API_BASE_URL}${API_ENDPOINTS.FOODS}`;
     return this.http.post(url, data)
 }
-
+getfoodbyname(foodtext:string){
+    const url = `${API_BASE_URL}${API_ENDPOINTS.FOODS}`;
+    return this.http.get<any[]>(url).pipe(
+        map((data)=>{return data.filter((item)=>(item.foodname===foodtext))})
+    )
+}
 getallfoods(){
     const url = `${API_BASE_URL}${API_ENDPOINTS.FOODS}`;
-        return this.http.get<any[]>(url).pipe(
-            map((data)=>{return data.filter((item)=>(item.foodcategory==='foods'))})
-        )
+        return this.http.get<any[]>(url)
 }
 getalldrinks(){
     const url = `${API_BASE_URL}${API_ENDPOINTS.FOODS}`;

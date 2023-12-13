@@ -3,6 +3,8 @@ import { ToastrService } from 'ngx-toastr';
 import { FoodService } from 'src/app/services/food.service';
 import { MatDialog} from '@angular/material/dialog';
 import { DetailComponent } from '../detail/detail.component';
+import { faBook, faBookmark,faGem} from '@fortawesome/free-solid-svg-icons';
+import { ShareddataService } from 'src/app/services/shareddata.service';
 
 @Component({
   selector: 'app-home',
@@ -12,12 +14,18 @@ import { DetailComponent } from '../detail/detail.component';
 export class HomeComponent {
   foodlist:any[] = [];
   drinklist:any[] = [];
-  constructor(private foodservice:FoodService, private toast: ToastrService, private matdialog: MatDialog){
+  fabookmark=faBookmark;
+  searchText:string=''
+  
+  constructor(private foodservice:FoodService, 
+              private toast: ToastrService, 
+              private matdialog: MatDialog,
+              private sharedservice:ShareddataService){
 
   }
 
   // Pagination properties
-  itemsPerPage: number = 5;
+  itemsPerPage: number = 25;
   currentPage: number = 1;
 
   // Calculate the start and end index for the displayed items
@@ -42,8 +50,17 @@ export class HomeComponent {
 
   ngOnInit(){
     this.getallfood()
-    this.getalldrink()
+    this.sharedservice.searchTextChanged$.subscribe((searchtext)=>{
+      this.searchText=searchtext;
+      // this.foodservice.getfoodbyname(this.searchText)
+      // .subscribe((searchfood)=>{
+      //   this.foodlist=searchfood
+      //   console.log(this.foodlist);
+      // })
+    })
   }
+
+
 
   viewfood(id:number){
         const dialogRef = this.matdialog.open(DetailComponent,{
@@ -55,7 +72,6 @@ export class HomeComponent {
         dialogRef.afterClosed().subscribe((dataFromDialog: any) => {
           // Handle the data from the dialog, and trigger a function if needed
           this.getallfood()
-          this.getalldrink()
         });
   }
 
@@ -70,16 +86,6 @@ export class HomeComponent {
         }
     })
   }
-  getalldrink(){
-    this.foodservice.getalldrinks()
-      .subscribe((drinklist:any[])=>{
-        if(drinklist){
-          this.drinklist = drinklist.map((item, index) => ({ ...item, serialNumber: index + 1 }));
-        
-        }else{
-          this.toast.error("error in fetching drinklist.")
-        }
-    })
-  }
+
 
 }
