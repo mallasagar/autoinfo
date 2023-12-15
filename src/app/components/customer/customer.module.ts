@@ -21,7 +21,6 @@ const routes: Routes = [
     { path: 'home', component:HomeComponent  },
     {path:'signup', component:SignupComponent},
     {path:'signin', component:SigninComponent},
-    { path: 'category',  loadChildren:()=>import('../pages/category/category.module').then((m)=>m.CategoryModule)},
     { path: '',   redirectTo: '/home', pathMatch:  'full' },
   ]
   }
@@ -33,6 +32,5 @@ const routes: Routes = [
   imports: [CommonModule,RouterModule.forChild(routes),FontAwesomeModule,FormsModule,MatCommonModule,MatMenuModule, MatDialogModule],
   providers:[],
   exports:[]
-
 })
 export class CustomerModule { }

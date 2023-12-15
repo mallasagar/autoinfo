@@ -11,8 +11,7 @@ import { RegisterComponent } from './components/auth/register/register.component
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CustomerComponent } from './components/customer/customer.component';
-import { CategoryComponent } from './components/pages/category/category.component';
-import { SnackComponent } from './components/pages/category/snack/snack.component';
+
 // import { HighlightDirective } from './directives/mainlayout.directive';
 
 
@@ -23,8 +22,7 @@ import { SnackComponent } from './components/pages/category/snack/snack.componen
     LoginComponent,
     RegisterComponent,
     CustomerComponent,
-    CategoryComponent,
-    SnackComponent,
+  
     // HighlightDirective
   ],
   imports: [

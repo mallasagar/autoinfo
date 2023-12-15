@@ -10,6 +10,7 @@ import { ToastrService } from 'ngx-toastr';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { CustomerService } from 'src/app/services/customer.service';
 import { CustomerprofileComponent } from 'src/app/components/customer/customerprofile/customerprofile.component';
+import { ShareddataService } from 'src/app/services/shareddata.service';
 
 
 
@@ -44,24 +45,31 @@ export class NavbarComponent {
   userdata:any;
   cartnumber:any;
   searchterm:string=''
+  categorysearch:string=''
 
-constructor( private matdialog: MatDialog,private customerservice: CustomerService, private toast:ToastrService,private authservice:AuthenticationService
+constructor( private matdialog: MatDialog,
+            private customerservice: CustomerService, 
+            private sharedservice:ShareddataService,
+            private toast:ToastrService,
+            private authservice:AuthenticationService
    ){}
 
 
-   
-   ngOnInit(): void {
+  ngOnInit(): void {
      this.getcustomerinfo() 
     }
     
-    @Output()searchtextchanged:EventEmitter<string>=new EventEmitter<string>();
+  @Output()searchtextchanged:EventEmitter<string>=new EventEmitter<string>();
 
     onSearchTextChanged(){
-     
       this.searchtextchanged.emit(this.searchterm);
     }
+    // send category from template to service
+    selectedcategory(category:string){
+      this.categorysearch=category;
+      this.sharedservice.setcategory(this.categorysearch)
+    }
 
-  
   getcustomerinfo(){
     this.customerservice.customerloggedin.subscribe((value)=>{
       if(value===false){
@@ -77,8 +85,6 @@ constructor( private matdialog: MatDialog,private customerservice: CustomerServi
       }
     })
     }
-  
-  
 
   customerloggedout(){
     localStorage.clear();
@@ -101,7 +107,6 @@ constructor( private matdialog: MatDialog,private customerservice: CustomerServi
       this.toggle=true;
     }
   }
-
 
   viewcustomerprofile(){
     const customerid=Number(localStorage.getItem('userid'));

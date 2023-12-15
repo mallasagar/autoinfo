@@ -35,7 +35,6 @@ constructor(private route: Router, private customerservice: CustomerService, pri
         this.customerservice.checkpasswordforlogin(this.customer.customeremail,this.customer.customerpassword)
         .subscribe((success)=>{
         if(success){
-          console.log(success)
            this.toast.success("welcome",success.customername)
           localStorage.setItem("isloggedin","true");
           localStorage.setItem("userid",success.id);

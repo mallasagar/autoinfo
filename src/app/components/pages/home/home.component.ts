@@ -5,6 +5,8 @@ import { MatDialog} from '@angular/material/dialog';
 import { DetailComponent } from '../detail/detail.component';
 import { faBook, faBookmark,faGem} from '@fortawesome/free-solid-svg-icons';
 import { ShareddataService } from 'src/app/services/shareddata.service';
+import { Router } from '@angular/router';
+import { favFoodModel } from 'src/app/models/favfood.model';
 
 @Component({
   selector: 'app-home',
@@ -16,37 +18,21 @@ export class HomeComponent {
   drinklist:any[] = [];
   fabookmark=faBookmark;
   searchText:string=''
+  customerstatus:boolean=false;
+  foodmark:string[]=[]
+  favfood:favFoodModel=new favFoodModel( 0,0 );
+  categoryselected:string='';
   
   constructor(private foodservice:FoodService, 
               private toast: ToastrService, 
               private matdialog: MatDialog,
+              private route: Router,
               private sharedservice:ShareddataService){
 
   }
 
-  // Pagination properties
-  itemsPerPage: number = 25;
-  currentPage: number = 1;
 
-  // Calculate the start and end index for the displayed items
-  get startIndex(): number {
-    return (this.currentPage - 1) * this.itemsPerPage;
-  }
 
-  get endIndex(): number {
-    return this.currentPage * this.itemsPerPage;
-  }
-
-  // Method to change the current page
-  changePage(newPage: number): void {
-    this.currentPage = newPage;
-  }
-
-  getPages(): number[] {
-    const totalItems = this.foodlist.length;
-    const totalPages = Math.ceil(totalItems / this.itemsPerPage);
-    return Array.from({ length: totalPages }, (_, index) => index + 1);
-  }
 
   ngOnInit(){
     this.getallfood()
@@ -55,11 +41,46 @@ export class HomeComponent {
       // this.foodservice.getfoodbyname(this.searchText)
       // .subscribe((searchfood)=>{
       //   this.foodlist=searchfood
-      //   console.log(this.foodlist);
       // })
     })
+    this.sharedservice.categoryTextChanged$.subscribe((categorydata)=>{
+      this.categoryselected=categorydata;
+     
+    })
+    
+   
   }
 
+
+  checkcustomerloggedin(){
+    const customerstatus=Boolean(localStorage.getItem('isloggedin'))
+    if(customerstatus&&(localStorage.getItem('userrole')==='customer'))
+    {
+      this.customerstatus=true;
+    }else{
+      this.toast.warning("customer is needs to  logged in")
+      this.route.navigate(['/signin'])
+    }
+  }
+
+  buyfood(id:number){
+    this.checkcustomerloggedin()
+    if(this.customerstatus){
+      this.toast.success("further process isto be done.")
+    }
+    
+  }
+  
+  markfood(id:string){
+    this.checkcustomerloggedin()
+    if(this.customerstatus){
+      const customerid=localStorage.getItem('userid')
+      this.foodservice.markfood(id)
+      const arrayofdat=customerid+id
+      this.foodmark.push(arrayofdat)
+      console.log(this.foodmark)
+    }
+  }
 
 
   viewfood(id:number){
@@ -80,7 +101,6 @@ export class HomeComponent {
       .subscribe((foodlist:any[])=>{
         if(foodlist){
           this.foodlist = foodlist.map((item, index) => ({ ...item, serialNumber: index + 1 }));
-        
         }else{
           this.toast.error("error in fetching food list.")
         }

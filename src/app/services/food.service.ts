@@ -9,6 +9,8 @@ import { HttpClient } from '@angular/common/http';
 export class FoodService {
     constructor(private http: HttpClient){}
 
+foodarray:string[]=[]
+
 createfood(data: any): Observable<any>{
     const url = `${API_BASE_URL}${API_ENDPOINTS.FOODS}`;
     return this.http.post(url, data)
@@ -66,6 +68,15 @@ deletefood(id:number){
     return this.http.delete(`${url}/${id}`)
 }
  
+markfood(foodid:string,  ){
+    
+        
+
+
+
+
+
+}
  
 }
    

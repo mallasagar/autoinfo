@@ -1,4 +1,4 @@
-<div class="flex flex-row w-full h-16 bg-green-50 items-center justify-around  fixed top-0  shadow-md shadow-green-300">
+<div class="flex flex-row w-full h-16 bg-green-50 items-center justify-around mb-1   shadow-md shadow-green-300">
     <div class=" sm:2/12 md:4/12  md:ms-12 ms-4 items-center  ">
         <div class="md:text-3xl sm:text-lg text-md font-bold font-serif text-orange-600"><a routerLink="/home"  >HamroResturant</a></div>
     </div>
@@ -11,23 +11,15 @@
 
         </div>
          <mat-menu #FoodCategory  yPosition="above">
-            <a routerLink="category/snacks" [routerLinkActive]="'active'">
-                <menu mat-menu-item class="  text-orange-700 hover:text-orange-600 font-semibold     text-2xl" ><fa-icon [icon]="fasnack" class="text-orange-400 me-2"  ></fa-icon>Snack </menu>
-            </a>
-            <a routerLink="category/foods" [routerLinkActive]="'active'">
-                <menu mat-menu-item class="  text-orange-700 hover:text-orange-600 font-semibold    text-2xl"><fa-icon [icon]="fafood" class="text-orange-400 me-2"    ></fa-icon>Food</menu>
-            </a>
-            <a routerLink="category/sweets" [routerLinkActive]="'active'">
-                <menu mat-menu-item class="  text-orange-700 hover:text-orange-600 font-semibold     text-2xl"><fa-icon [icon]="fasweet" class="text-orange-400 me-2"   ></fa-icon>Sweets</menu>
-            </a>
-            <a routerLink="category/drinks" [routerLinkActive]="'active'">
-                <menu mat-menu-item class="  text-orange-700 hover:text-orange-600 font-semibold     text-2xl"><fa-icon [icon]="fadrink" class="text-orange-400 me-2"   ></fa-icon>Drink</menu>
-            </a>
+                <menu mat-menu-item class="  text-orange-700 hover:text-orange-600 font-semibold     text-2xl" (click)="selectedcategory('all')" ><fa-icon [icon]="fasnack" class="text-orange-400 me-2"  ></fa-icon>All </menu>
+                <menu mat-menu-item class="  text-orange-700 hover:text-orange-600 font-semibold     text-2xl" (click)="selectedcategory('snacks')" ><fa-icon [icon]="fasnack" class="text-orange-400 me-2"  ></fa-icon>Snack </menu>
+                <menu mat-menu-item class="  text-orange-700 hover:text-orange-600 font-semibold    text-2xl" (click)="selectedcategory('foods')"><fa-icon [icon]="fafood" class="text-orange-400 me-2"    ></fa-icon>Food</menu>
+                <menu mat-menu-item class="  text-orange-700 hover:text-orange-600 font-semibold     text-2xl" (click)="selectedcategory('sweets')"><fa-icon [icon]="fasweet" class="text-orange-400 me-2"   ></fa-icon>Sweets</menu>
+                <menu mat-menu-item class="  text-orange-700 hover:text-orange-600 font-semibold     text-2xl"(click)="selectedcategory('drinks')"><fa-icon [icon]="fadrink" class="text-orange-400 me-2"   ></fa-icon>Drink</menu>
          </mat-menu>
-            <input  class="w-6/12 h-10 rounded-lg "  [(ngModel)]="searchterm" placeholder="Search..." (input)="onSearchTextChanged()">
+
+            <input  class="w-6/12 h-10 rounded-lg "  [(ngModel)]="searchterm" placeholder="  search {{this.categorysearch}}..." (input)="onSearchTextChanged()">
         
-            <!-- <div *ngIf="!isloggedin"><a routerLink="about" [routerLinkActive]="'active'">About</a></div>
-            <div *ngIf="!isloggedin"><a routerLink="contact" [routerLinkActive]="'active'">Contact</a></div> -->
             <div class="flex gap-6  justify-end md-ms-auto items-baseline   text-black" >
                     <button *ngIf="!customerloggedin" class="  text-green-700 hover:text-green-600 font-semibold     text-md"><a routerLink="signup" [routerLinkActive]="'active'">Signup</a></button>
                     <button *ngIf="!customerloggedin" class="  text-green-700 hover:text-green-600 font-semibold     text-md " ><a routerLink="signin" [routerLinkActive]="'active'">SignIn</a></button>
@@ -48,8 +40,6 @@
                         <menu mat-menu-item class="  text-orange-700 hover:text-orange-600 font-semibold     text-2xl"><fa-icon [icon]="faorderstatus" class="text-orange-400 me-2"   ></fa-icon> Delivery Status</menu>
                     </a>
                         <menu mat-menu-item (click)="customerloggedout()"*ngIf="customerloggedin" class="  text-orange-700 hover:text-orange-600 font-semibold     text-2xl"><fa-icon [icon]="falogout" class="text-orange-400 me-2"   ></fa-icon> LogOut</menu>
-                   
-
                 </mat-menu>
             </div>
     </div>
