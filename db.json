@@ -52,127 +52,18 @@
   ],
   "customers": [
     {
-      "customername": "sagar malla",
+      "customername": "john",
       "customeraddress": "ktm",
       "customergender": "male",
-      "customerage": 10,
-      "customercontact": "9819292928",
-      "customeremail": "sagar@gmail.com",
-      "userrole": "customer",
-      "customerpassword": "sagar",
-      "id": 1
-    },
-    {
-      "customername": "sita",
-      "customeraddress": "kathmandu",
-      "customergender": "female",
-      "customerage": 20,
-      "customercontact": "9819202012",
-      "customeremail": "sita@gmail.com",
-      "userrole": "customer",
-      "customerpassword": "sita",
-      "id": 2
-    },
-    {
-      "customername": "john",
-      "customeraddress": "koteshwor",
-      "customergender": "male",
-      "customerage": 9,
-      "customercontact": "9810298888",
+      "customerage": 12,
+      "customercontact": "9810293848",
       "customeremail": "john@gmail.com",
       "userrole": "customer",
       "customerpassword": "john",
-      "id": 3
-    },
-    {
-      "customername": "gita",
-      "customeraddress": "ktm",
-      "customergender": "female",
-      "customerage": 10,
-      "customercontact": "9810298837",
-      "customeremail": "gita@gmail.com",
-      "userrole": "customer",
-      "customerpassword": "gita",
-      "id": 4
-    },
-    {
-      "customername": "hero",
-      "customeraddress": "ktm",
-      "customergender": "male",
-      "customerage": 11,
-      "customercontact": "9810292838",
-      "customeremail": "hero@gmail.com",
-      "userrole": "customer",
-      "customerpassword": "hero",
-      "id": 5
-    },
-    {
-      "customername": "villan",
-      "customeraddress": "ktm",
-      "customergender": "male",
-      "customerage": 10,
-      "customercontact": "9819203949",
-      "customeremail": "villan@gmail.com",
-      "userrole": "customer",
-      "customerpassword": "villan",
-      "id": 6
-    },
-    {
-      "customername": "zero",
-      "customeraddress": "ktm",
-      "customergender": "male",
-      "customerage": 10,
-      "customercontact": "9019283848",
-      "customeremail": "zero@gmail.com",
-      "userrole": "customer",
-      "customerpassword": "zero",
-      "id": 7
-    },
-    {
-      "customername": "shya",
-      "customeraddress": "ktm",
-      "customergender": "male",
-      "customerage": 1,
-      "customercontact": "9810293746",
-      "customeremail": "shyam@gmail.com",
-      "userrole": "customer",
-      "customerpassword": "shyam",
-      "id": 8
-    },
-    {
-      "customername": "saitama",
-      "customeraddress": "bkt",
-      "customergender": "male",
-      "customerage": 100,
-      "customercontact": "9810298384",
-      "customeremail": "saitama@gmail.com",
-      "userrole": "customer",
-      "customerpassword": "saitama",
-      "id": 9
-    },
-    {
-      "customername": "aka kumar",
-      "customeraddress": "kathmandu",
-      "customergender": "male",
-      "customerage": 10,
-      "customercontact": "9012392010",
-      "customeremail": "aka@gmail.com",
-      "userrole": "customer",
-      "customerpassword": "aka",
-      "id": 10
-    },
-    {
-      "customername": "sadhana",
-      "customeraddress": "ktm",
-      "customergender": "female",
-      "customerage": 11,
-      "customercontact": "98928384848",
-      "customeremail": "sadhana@gmail.com",
-      "userrole": "customer",
-      "customerpassword": "sadhana",
-      "id": 11
+      "id": 1
     }
   ],
+  "favourites": [],
   "foods": [
     {
       "foodname": "Hamburger ",
@@ -184,7 +75,7 @@
       "foodmakerbrand": "Hamrosan Resturant",
       "foodmakercontact": "9812283746",
       "userid": 4,
-      "foodcategory": "foods",
+      "foodcategory": "Snacks",
       "foodcuisine": "American Cuisine:",
       "fooddescription": " A hamburger, in the context of food, typically refers to a sandwich consisting of a cooked ground meat patty, usually beef, placed inside a sliced bread roll or bun. The patty is often grilled or fried and may be seasoned with various spices. ",
       "id": 1

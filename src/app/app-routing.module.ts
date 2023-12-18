@@ -8,6 +8,7 @@ import { authGuard } from './guard/auth.guard';
 import { userauthGuard } from './guard/userauth.guard';
 import { blockGuard } from './guard/blockguard';
 import { MatDialog, MatDialogClose } from '@angular/material/dialog';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   { path: '',  loadChildren:()=>import('./components/customer/customer.module').then((m)=>m.CustomerModule)},
@@ -20,7 +21,7 @@ const routes: Routes = [
 ]
  
 @NgModule({
-  imports: [RouterModule.forRoot(routes,), FormsModule ],
+  imports: [RouterModule.forRoot(routes,),HttpClientModule, FormsModule ],
   exports: [RouterModule, FormsModule]
 })
 export class AppRoutingModule { }

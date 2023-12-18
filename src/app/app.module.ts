@@ -32,11 +32,11 @@ import { CustomerComponent } from './components/customer/customer.component';
     AppRoutingModule,
     FontAwesomeModule,
     BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot( {timeOut: 1000,
+    ToastrModule.forRoot( {timeOut: 500,
       positionClass: 'toast-bottom-right',
       preventDuplicates: true,}),
       HttpClientModule,
-      MatDialogModule
+      MatDialogModule,
      
   ],
   providers: [],

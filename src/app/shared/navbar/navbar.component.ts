@@ -11,6 +11,7 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 import { CustomerService } from 'src/app/services/customer.service';
 import { CustomerprofileComponent } from 'src/app/components/customer/customerprofile/customerprofile.component';
 import { ShareddataService } from 'src/app/services/shareddata.service';
+import { Router } from '@angular/router';
 
 
 
@@ -51,7 +52,8 @@ constructor( private matdialog: MatDialog,
             private customerservice: CustomerService, 
             private sharedservice:ShareddataService,
             private toast:ToastrService,
-            private authservice:AuthenticationService
+            private authservice:AuthenticationService,
+            private route:Router
    ){}
 
 
@@ -86,12 +88,13 @@ constructor( private matdialog: MatDialog,
     })
     }
 
+ 
   customerloggedout(){
     localStorage.clear();
-    this.customerservice.customerloggedin.next(false)
     this.getcustomerinfo()
+    this.customerservice.customerloggedin.next(false)
     this.toast.success("Logout Successfully.")
-    // this.getcustomerinfo();
+    this.route.navigate(['/home']);
   }
 
   togglemenu(){

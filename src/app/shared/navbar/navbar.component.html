@@ -30,11 +30,11 @@
                 </button>
                 <mat-menu #settingsMenu>
                     <menu mat-menu-item (click)="viewcustomerprofile()" class="  text-orange-700 hover:text-orange-600 font-semibold     text-2xl"><fa-icon [icon]="faprofile" class="text-orange-400 me-2"   ></fa-icon>Profile</menu>
-                    <a routerLink="category/favourite" [routerLinkActive]="'active'">
-                        <menu mat-menu-item class="  text-orange-700 hover:text-orange-600 font-semibold     text-2xl"><fa-icon [icon]="fafavroute" class="text-orange-400 me-2"   ></fa-icon> Favourite</menu>
+                    <a routerLink="customer/favourite" [routerLinkActive]="'active'">
+                        <menu mat-menu-item class="  text-orange-700 hover:text-orange-600 font-semibold     text-2xl"><fa-icon [icon]="fafavroute" class="text-orange-400 me-2"   ></fa-icon> Favourite List</menu>
                     </a>
                     <a routerLink="category/order" [routerLinkActive]="'active'">
-                        <menu mat-menu-item class="  text-orange-700 hover:text-orange-600 font-semibold     text-2xl"><fa-icon [icon]="faorder" class="text-orange-400 me-2"   ></fa-icon> Order</menu>
+                        <menu mat-menu-item class="  text-orange-700 hover:text-orange-600 font-semibold     text-2xl"><fa-icon [icon]="faorder" class="text-orange-400 me-2"   ></fa-icon> Order List</menu>
                     </a>
                     <a routerLink="category/orderstatus" [routerLinkActive]="'active'">
                         <menu mat-menu-item class="  text-orange-700 hover:text-orange-600 font-semibold     text-2xl"><fa-icon [icon]="faorderstatus" class="text-orange-400 me-2"   ></fa-icon> Delivery Status</menu>

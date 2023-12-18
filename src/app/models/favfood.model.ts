@@ -1,9 +1,9 @@
 export class favFoodModel{
 
   userid:number;
-  foodid:number;
+  foodid:string;
   
-    constructor(userid:number,foodid:number
+    constructor(userid:number,foodid:string
         )
         {
              this.userid = userid;

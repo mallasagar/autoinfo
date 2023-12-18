@@ -2,14 +2,18 @@ import { Injectable } from '@angular/core';
 import { Observable,map } from 'rxjs';
 import { API_BASE_URL, API_ENDPOINTS} from '../api.constant';
 import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FoodService {
     constructor(private http: HttpClient){}
+    private foodcart=new BehaviorSubject<string>('');
+    FoodCartChanged$ = this.foodcart.asObservable();
+    foodid:any[]=[];
+    foodarray:string[] = [];
 
-foodarray:string[]=[]
 
 createfood(data: any): Observable<any>{
     const url = `${API_BASE_URL}${API_ENDPOINTS.FOODS}`;
@@ -68,15 +72,46 @@ deletefood(id:number){
     return this.http.delete(`${url}/${id}`)
 }
  
-markfood(foodid:string,  ){
-    
-        
-
-
-
-
-
+markfood(data: any ){
+    const url = `${API_BASE_URL}${API_ENDPOINTS.FAVS}`;
+    return this.http.post(url,data);
 }
- 
+
+checkfoodmark(favdata:any){
+        const url = `${API_BASE_URL}${API_ENDPOINTS.FAVS}`;
+        return this.http.get<any[]>(url).pipe(
+            map((data)=>{return data.find((item)=>(favdata.userid===item.userid&&favdata.foodid===item.foodid)
+                )})
+          )
+    }
+getfavfood(id:number){
+    const url = `${API_BASE_URL}${API_ENDPOINTS.FAVS}`;
+    return this.http.get<any[]>(url).pipe(
+        map((data)=>{return data.filter((item)=>item.userid===id
+          )})
+)
+}
+
+getallcart(){
+    const url = `${API_BASE_URL}${API_ENDPOINTS.FAVS}`;
+    return this.http.get<any[]>(url)
+}
+getcartbyid(id:number){
+    const url = `${API_BASE_URL}${API_ENDPOINTS.FAVS}`;
+    return this.http.get<any[]>(url).pipe(
+        map((data)=>{return data.find((item)=>item.foodid===id
+          )}))
+}
+
+getcartfood(id:any){
+    const url = `${API_BASE_URL}${API_ENDPOINTS.FOODS}`;
+    return this.http.get<any[]>(`${url}/${id}`)
+}
+
+deletefoodcart(id:number){
+    const url = `${API_BASE_URL}${API_ENDPOINTS.FAVS}`;
+    return this.http.delete(`${url}/${id}`)
+}
+
 }
    

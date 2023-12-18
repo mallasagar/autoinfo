@@ -1,0 +1,29 @@
+<div class="w-full bg-white py-12 px-8">
+    <ng-container>
+
+        <table class="h-auto w-full gap-2 " >
+            <thead class="border bg-green-200">
+                <tr>
+                    <td>S.N</td>
+                    <td>Food Name</td>
+                    <td>From</td>
+                    <td>Quantity</td>
+                    <td>Price</td>
+                    <td>Modify</td>
+                </tr>
+            </thead>
+            <tbody class="border" *ngFor="let item of foodcartlist">
+                <tr class="border">
+                    <td> {{item.serialNumber}}</td>
+                    <td> {{item.foodname}}</td>
+                    <td> {{item.foodmakerbrand}}</td>
+                    <td> {{item.quantity}}</td>
+                    <td> {{item.foodprice}}</td>
+                    <td> <span (click)="deletecart(item.id)">Delete</span>
+                        <span class="ms-8">Confirm</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </ng-container>
+</div>

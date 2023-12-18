@@ -3,10 +3,11 @@ import { ToastrService } from 'ngx-toastr';
 import { FoodService } from 'src/app/services/food.service';
 import { MatDialog} from '@angular/material/dialog';
 import { DetailComponent } from '../detail/detail.component';
-import { faBook, faBookmark,faGem} from '@fortawesome/free-solid-svg-icons';
+import { faBook, faBookmark,faSquarePlus} from '@fortawesome/free-solid-svg-icons';
 import { ShareddataService } from 'src/app/services/shareddata.service';
 import { Router } from '@angular/router';
 import { favFoodModel } from 'src/app/models/favfood.model';
+import { NavigationStart,NavigationEnd,NavigationCancel,NavigationError } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -16,41 +17,39 @@ import { favFoodModel } from 'src/app/models/favfood.model';
 export class HomeComponent {
   foodlist:any[] = [];
   drinklist:any[] = [];
-  fabookmark=faBookmark;
+  fabookmark=faSquarePlus;
   searchText:string=''
   customerstatus:boolean=false;
   foodmark:string[]=[]
-  favfood:favFoodModel=new favFoodModel( 0,0 );
+  favfood:favFoodModel=new favFoodModel( 0,'' );
   categoryselected:string='';
   
   constructor(private foodservice:FoodService, 
               private toast: ToastrService, 
               private matdialog: MatDialog,
               private route: Router,
-              private sharedservice:ShareddataService){
-
+              private sharedservice:ShareddataService,private router:Router){
   }
 
-
+showsearch:Boolean = false;
+foodbookmark:any;
 
 
   ngOnInit(){
+    this.getrouterevent()
     this.getallfood()
     this.sharedservice.searchTextChanged$.subscribe((searchtext)=>{
       this.searchText=searchtext;
-      // this.foodservice.getfoodbyname(this.searchText)
-      // .subscribe((searchfood)=>{
-      //   this.foodlist=searchfood
-      // })
     })
     this.sharedservice.categoryTextChanged$.subscribe((categorydata)=>{
       this.categoryselected=categorydata;
-     
     })
-    
-   
   }
 
+  getrouterevent(){
+   
+      
+  }
 
   checkcustomerloggedin(){
     const customerstatus=Boolean(localStorage.getItem('isloggedin'))
@@ -58,27 +57,38 @@ export class HomeComponent {
     {
       this.customerstatus=true;
     }else{
+      this.customerstatus=false;
       this.toast.warning("customer is needs to  logged in")
-      this.route.navigate(['/signin'])
+      // this.route.navigate(['/signin'])
     }
   }
 
   buyfood(id:number){
     this.checkcustomerloggedin()
     if(this.customerstatus){
-      this.toast.success("further process isto be done.")
     }
-    
   }
+
   
   markfood(id:string){
     this.checkcustomerloggedin()
     if(this.customerstatus){
-      const customerid=localStorage.getItem('userid')
-      this.foodservice.markfood(id)
-      const arrayofdat=customerid+id
-      this.foodmark.push(arrayofdat)
-      console.log(this.foodmark)
+      const customerid=Number(localStorage.getItem('userid'))
+      this.favfood.userid=customerid;
+      this.favfood.foodid=id;
+      this.foodbookmark=this.favfood
+      // check if food is already marked or not
+      this.foodservice.checkfoodmark(this.foodbookmark)
+        .subscribe((success:boolean)=>{
+         if(!success){
+          this.foodservice.markfood(this.foodbookmark)
+          .subscribe((success)=>{
+            this.toast.success("Added to Favorites list")
+          })
+         }else{
+          this.toast.error("Food is already marked as favorite in your favorite   list.")
+         }
+        })      
     }
   }
 
