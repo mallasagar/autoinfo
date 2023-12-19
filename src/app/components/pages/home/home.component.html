@@ -7,13 +7,13 @@
     <div
       class="flex flex-col justify-start w-10/12 sm:w-8/12 md:w-2/12 rounded-lg align-middle overflow-hidden shadow-lg content-center items-center bg-gray-100 my-4"
       *ngIf=" (searchText === '' || item.foodname.toLowerCase().includes(searchText) 
-            )">
+            )"   >
  
       <div class="flex justify-end w-11/12 my-0"  >
           <fa-icon [icon]="fabookmark" class="float-right mt-2 text-orange-600 text-3xl" (click)="markfood(item.id)"></fa-icon>
       </div>
       
-      <div class="relative overflow-hidden w-50 h-40">
+      <div class="relative overflow-hidden w-50 h-40"  (click)="viewfood(item.id)">
         <img class="transition-transform transform hover:scale-110 duration-300" [src]="item.foodimageurl" alt="Product Image">
       </div>
       
@@ -22,15 +22,10 @@
         <p class="text-gray-700 text-base">Price: $ {{ item.foodprice }}</p>
       </div>
       
-      <div class="flex flex-row gap-2 justify-evenly px-1 pb-4 pt-2">
-        <button
-        class="bg-transparent border border-blue-500 shadow-inner text-black hover:bg-blue-600 hover:text-white font-bold py-2 px-4 rounded-full"
-        (click)="viewfood(item.id)"
-        >
-        Learn More
-      </button>
+      <div class="flex flex-row gap-2 justify-center  pb-4 pt-2">
+     
       <button
-      class="bg-transparent border border-green-500 shadow-xl text-black hover:bg-green-600 hover:text-white font-bold py-2 px-4 rounded-full"
+      class="bg-transparent border border-green-400 text-lg shadow-xl text-black hover:bg-green-600 hover:text-white font-bold py-2 px-8 rounded-lg"
       (click)="buyfood(item.id)"
       >
       Buy

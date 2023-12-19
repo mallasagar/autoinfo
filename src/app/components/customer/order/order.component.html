@@ -1,0 +1,44 @@
+<div class="w-full bg-white py-12 px-8">
+    <ng-container>
+
+        <table class="h-auto w-full gap-2 " >
+            <thead class="border bg-green-200 text-center">
+                <tr>
+                    <td>S.N</td>
+                    <td>Details</td>
+                   
+                    <td>Modify</td>
+                </tr>
+            </thead>
+            <tbody class="border text-center" *ngFor="let item of orderlist">
+                <tr class="border h-16 py-8">
+                    <td>1 </td>
+                    <td>
+                        <tr>
+                            <td>Name:{{item.ordername}}</td>
+                        </tr>
+                        <tr>
+                            <td>From: {{item.orderbrand}}</td>
+                        </tr>
+                        <tr>
+                            <td>Quantity: {{item.orderquantity}}</td>
+                        </tr>
+                        <tr>
+                            <td>Price: {{item.orderprice}}</td>
+                        </tr>
+                        <tr>
+                            <td>Total: {{item.totalprice}}</td>
+                        </tr>
+                        <tr>
+                            <td>Time: {{item.ordertime}}</td>
+                        </tr>
+                        
+                    </td>
+                    <td> <span  class="hover:bg-red-600 hover:rounded-md hover:text-white p-2">Delete</span>
+                        <span class="ms-8 hover:bg-green-600 hover:rounded-md hover:text-white p-2" >Confirm</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </ng-container>
+</div>

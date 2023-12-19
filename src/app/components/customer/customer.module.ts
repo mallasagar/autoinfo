@@ -20,12 +20,16 @@ import { FavComponent } from './fav/fav.component';
 import { DeletecartComponent } from './fav/deletecart/deletecart.component';
 import { customerguardGuard } from 'src/app/guard/customerguard.guard';
 
+import { OrderComponent } from './order/order.component';
+import { SingleorderComponent } from './order/singleorder/singleorder.component';
+
 const routes: Routes = [
   {path:'',component:CustomerlayoutComponent  ,children:[
     { path: 'home', component:HomeComponent  },
     {path:'signup', component:SignupComponent},
     {path:'signin', component:SigninComponent},
     {path:'customer/favourite',canActivate:[customerguardGuard], component:FavComponent},
+    {path:'customer/orders',canActivate:[customerguardGuard], component:OrderComponent},
     { path: '',   redirectTo: '/home', pathMatch:  'full' },
   ]
   }
@@ -33,7 +37,7 @@ const routes: Routes = [
 
 
 @NgModule({
-  declarations: [CustomerlayoutComponent, NavbarComponent, HomeComponent, AboutComponent, ContactComponent, SigninComponent,SignupComponent, DetailComponent, CustomerprofileComponent, FavComponent, DeletecartComponent],
+  declarations: [CustomerlayoutComponent, NavbarComponent, HomeComponent, AboutComponent, ContactComponent, SigninComponent,SignupComponent, DetailComponent, CustomerprofileComponent, FavComponent, DeletecartComponent, OrderComponent, SingleorderComponent],
   imports: [HttpClientModule,CommonModule,RouterModule.forChild(routes),FontAwesomeModule,FormsModule,MatCommonModule,MatMenuModule, MatDialogModule],
   providers:[],
   exports:[]

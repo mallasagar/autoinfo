@@ -5,7 +5,8 @@ export const API_ENDPOINTS = {
   USERS: '/users',
   FOODS: '/foods',
   CUSTOMERS:'/customers',
-  FAVS:'/favourites'
+  FAVS:'/favourites',
+  ORDERS:'/orders'
   
   // Add more endpoints as needed
 };

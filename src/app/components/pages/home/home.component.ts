@@ -8,6 +8,7 @@ import { ShareddataService } from 'src/app/services/shareddata.service';
 import { Router } from '@angular/router';
 import { favFoodModel } from 'src/app/models/favfood.model';
 import { NavigationStart,NavigationEnd,NavigationCancel,NavigationError } from '@angular/router';
+import { SingleorderComponent } from '../../customer/order/singleorder/singleorder.component';
 
 @Component({
   selector: 'app-home',
@@ -66,6 +67,16 @@ foodbookmark:any;
   buyfood(id:number){
     this.checkcustomerloggedin()
     if(this.customerstatus){
+      const confirmorderdilog = this.matdialog.open(SingleorderComponent, {
+        width: "600px",
+        data: {
+          foodid:id,
+        },
+      });
+    confirmorderdilog.afterClosed().subscribe((dataFromDialog: any) => {
+        this.getallfood();
+        // Handle the data from the dialog, and trigger a function if needed
+      });
     }
   }
 

@@ -89,7 +89,6 @@ getfavfoods() {
       switchMap((foodList: any) => {
         // Adding a serial number to each item in the foodList array
         this.foodcartlist = foodList.map((food: any, index: number) => ({ ...food, serialNumber: index + 1 }));
-        console.log(this.foodcartlist);
 
         // Use of to emit a new observable in the stream
         return of(this.foodcartlist);

@@ -1,0 +1,49 @@
+<mat-dialog-content class="p-4 md:p-8 lg:p-12">
+    
+    <div mat-dialog-action class="text-start mb-8">
+        <form class="space-y-4" #orderdata="ngForm"  (ngSubmit)="singleorder()" >
+        <div class="flex flex-col gap-4">
+                <input type="text" disabled class="text-4xl font-bold bg-transparent"name="ordername" value="{{ fooddetail?.foodname }}" 
+                [(ngModel)]="order.ordername">
+          <div class="text-lg font-bold">
+              Address:
+              <input type="text" name="orderaddress" disabled value="({{ customerdetail?.customeraddress }})"
+              [(ngModel)]="order.orderaddress" class=" ms-4 bg-transparent font-medium">
+            </div>
+            <div class="text-lg font-bold">
+            CONTACT TO:
+            <input type="text" name="ordercontact" disabled value="{{ customerdetail?.customercontact }}"
+            [(ngModel)]="order.ordercontact" class=" ms-4 bg-transparent font-medium">
+          </div>
+          <div class="text-lg font-bold  ">
+            Quantity:
+            <input type="number" name="orderquantity" required max="5" min="1"
+            [(ngModel)]="order.orderquantity" class=" border rounded-sm ms-4 bg-transparent font-medium w-36 " placeholder="Quantity">
+          </div>
+          <div class="text-lg font-bold">
+              FROM:
+              <input type="text" name="orderbrand"disabled value="{{ fooddetail?.foodmakerbrand }}"
+              [(ngModel)]="order.orderbrand" 
+              class="ms-4 bg-transparent font-medium">
+            </div>
+          <div class="text-lg font-bold  " hidden>
+              Customer Name:
+              <input type="text" name="customername" required disabled value=""
+              [(ngModel)]="order.customername" 
+              class="ms-4 bg-transparent font-medium">
+            </div>
+          <div class="text-lg font-bold">
+              Price:
+              <input type="text" name="orderprice" required disabled value="{{ fooddetail?.foodprice  | currency:'USD':'symbol':'1.2-2'}}" 
+              [(ngModel)]="order.orderprice"
+              class="ms-4 bg-transparent font-medium">
+            </div>
+            
+        </div>
+        <input type="submit" class="bg-green-300 text-white p-2 mt-8 hover:bg-green-500 rounded-md w-full"
+        value="singleorder" mat-dialog-close="close" [disabled]="!orderdata.valid" >
+      </form>
+    </div>
+  </mat-dialog-content>
+  
+
