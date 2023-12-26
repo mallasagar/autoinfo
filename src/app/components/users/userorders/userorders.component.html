@@ -1,0 +1,46 @@
+<div class="w-full bg-white py-12 px-8">
+        <table class="h-auto w-full gap-2 " >
+            <thead class="border-4 text-black bg-green-300 text-center text-lg font-normal">
+                <tr>
+                    <td>S.N</td>
+                    <td>Customer Details</td>
+                    <td>Order Details</td>
+                </tr>
+            </thead>
+            <ng-container *ngFor="let item of userorderlist; let x= index">
+            <tbody class="border-4 text-center"   >
+                    <tr class="border h-16 py-8">
+                    <td class="border-2 ">{{x+1}}</td>
+                        
+                    <td class="w-full flex-col sm:flex-col md:flex-row gap-4 md:w-4/12 justify-start items-start">
+                    <div class="flex w-11/12 flex-col ms-2 leading-relaxed items-start">
+                          <span> Name: {{item.customername}}</span>
+                          <span>Address: {{item.customeraddress}}</span>
+                          <span>Contact:{{item.customercontact}} </span>
+                          <span>Time:{{item.time}} </span>
+                          <p>Total price: </p>
+                    </div>
+                   
+                  </td>
+                  <td class="w-full flex-col sm:flex-col md:flex-row md:w-8/12 justify-center items-center">
+                    <div class="flex w-11/12 flex-col gap-4 items-center">
+                        <ng-container *ngFor="let order of item.order"  >
+                          <ng-container [ngSwitch]="customerid">
+                            <ng-container *ngSwitchCase="order.orderbrandid">
+                          <div class="my-4 rounded-lg bg-green-50 w-10/12 p-4">
+                            <p>Order:{{order.ordername}} </p>
+                            <p>Quantity:{{order.orderquantity}} </p>
+                            <p>Actual Price:$ {{order.orderprice}}</p>
+                          </div>
+                        </ng-container>
+                      </ng-container>
+                      </ng-container>
+                      </div>
+                      
+                  </td>
+                  </tr>
+              </tbody>
+             
+          </ng-container>
+        </table>
+</div>

@@ -1,0 +1,15 @@
+<mat-dialog-content>
+    <form  #favorderdata="ngForm"  (ngSubmit)="favorderquantity()">
+    <div class="flex flex-col gap-2" mat-dialog-actions>
+    <!-- <div class="flex flex-col gap-8"> -->
+
+        <input type="number" name="favorder"   [(ngModel)]="favfood.favorder" maxlength="1" max="5" min="1" value="1" required>
+        <span>max-order= 5
+            min-order=1
+        </span>
+        <input mat-dialog-close="close" [disabled]="!favorderdata.valid" 
+        type="submit" value="setquantity" placeholder="Set Quantity"  class="border rounded-md px-6 py-2 shadow-md bg-green-100 hover:shadow-2xl hover:bg-green-400 ">
+    </div>
+<!-- </div> -->
+</form >
+</mat-dialog-content>

@@ -5,6 +5,7 @@ import { OrderModel } from 'src/app/models/ordermodel';
 import { CustomerService } from 'src/app/services/customer.service';
 import { FoodService } from 'src/app/services/food.service';
 import { OrderService } from 'src/app/services/order.service';
+import { Orderdetails } from 'src/app/models/ordermodel';
 
 
 @Component({
@@ -21,25 +22,38 @@ export class SingleorderComponent {
   fooddetail:any
   customerdetail:any;
 
-  order: OrderModel= new OrderModel('','','','',1,'','','','','','','')
+  order: OrderModel= new OrderModel('','','','','','','','')
+  orderdetail:Orderdetails= new Orderdetails('',1,'','','','')
   
 
   ngOnInit(){
     this.getfooddetail(this.data.foodid)
     this.getcustomerdetail() 
+    
   }
   singleorder(){
     this.order.customername=this.customerdetail.customername
-    this.order.ordercontact=this.customerdetail.customercontact
-    this.order.orderaddress=this.customerdetail.customeraddress
+    this.order.customercontact=this.customerdetail.customercontact
+    this.order.customeraddress=this.customerdetail.customeraddress
     this.order.customerid=this.customerdetail.id
-    this.order.ordername=this.fooddetail.foodname
-    this.order.orderbrand=this.fooddetail.foodmakerbrand
-    this.order.orderprice=this.fooddetail.foodprice
-    this.order.totalprice=String(Number(this.fooddetail.foodprice*this.order.orderquantity))
-    this.order.orderstatus="requested"
-    this.order.brandid=this.fooddetail.userid
-    this.order.ordertime=String(new Date())
+    this.order.time=String(new Date())
+    this.order.orderstatus='request'
+    
+    // this.order.order=[]
+
+    const orderDetails = new Orderdetails(
+      this.orderdetail.ordername=this.fooddetail.foodname,
+      this.orderdetail.orderprice=this.fooddetail.foodprice,
+      this.orderdetail.orderquantity,
+      
+      this.orderdetail.orderbrandname=this.fooddetail?.foodmakerbrand,
+      this.orderdetail.orderbrandid=this.fooddetail.userid,
+      this.orderdetail.ordertotalprice=String(Number(this.orderdetail.orderprice)*Number(this.orderdetail.orderquantity))
+      );
+      this.order.order.push(orderDetails)
+
+
+    
     this.orderservice.createorder(this.order)
     .subscribe((success)=>{
       if(success){
@@ -48,7 +62,6 @@ export class SingleorderComponent {
         this.toast.error("Error while placing an order.")
       }
     })
-    
   }
   getfooddetail(data:number){
     this.foodservice.getfoodbyid(data)

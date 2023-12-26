@@ -13,12 +13,14 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { DeletefoodsComponent } from './addfoods/deletefoods/deletefoods.component';
 import { UpdatefoodsComponent } from './addfoods/updatefoods/updatefoods.component';
+import { UserordersComponent } from './userorders/userorders.component';
 
 const routes: Routes = [
   {path:'',component: UserlayoutComponent ,children:[
     { path: 'user', component:AboutComponent  },
     {path:'dashboard', component:UserdashboardComponent},
     { path: 'addfoods', component:AddfoodsComponent  },
+    { path: 'order', component:UserordersComponent  },
     { path: '',   redirectTo: 'dashboard', pathMatch: 'full' },
   ]
   }
@@ -26,7 +28,7 @@ const routes: Routes = [
 
 
 @NgModule({
-  declarations: [UserlayoutComponent, UserheaderComponent, UsersidenavComponent, AddfoodsComponent, UserdashboardComponent, CreatefoodComponent, DeletefoodsComponent, UpdatefoodsComponent],
+  declarations: [UserlayoutComponent, UserheaderComponent, UsersidenavComponent, AddfoodsComponent, UserdashboardComponent, CreatefoodComponent, DeletefoodsComponent, UpdatefoodsComponent, UserordersComponent],
   imports: [CommonModule,RouterModule.forChild(routes), MatDialogModule, MatInputModule, FormsModule, ],
   providers:[]
 

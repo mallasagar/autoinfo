@@ -22,6 +22,7 @@ import { customerguardGuard } from 'src/app/guard/customerguard.guard';
 
 import { OrderComponent } from './order/order.component';
 import { SingleorderComponent } from './order/singleorder/singleorder.component';
+import { FavorderComponent } from './fav/favorder/favorder.component';
 
 const routes: Routes = [
   {path:'',component:CustomerlayoutComponent  ,children:[
@@ -37,7 +38,7 @@ const routes: Routes = [
 
 
 @NgModule({
-  declarations: [CustomerlayoutComponent, NavbarComponent, HomeComponent, AboutComponent, ContactComponent, SigninComponent,SignupComponent, DetailComponent, CustomerprofileComponent, FavComponent, DeletecartComponent, OrderComponent, SingleorderComponent],
+  declarations: [CustomerlayoutComponent, NavbarComponent, HomeComponent, AboutComponent, ContactComponent, SigninComponent,SignupComponent, DetailComponent, CustomerprofileComponent, FavComponent, DeletecartComponent, OrderComponent, SingleorderComponent, FavorderComponent],
   imports: [HttpClientModule,CommonModule,RouterModule.forChild(routes),FontAwesomeModule,FormsModule,MatCommonModule,MatMenuModule, MatDialogModule],
   providers:[],
   exports:[]

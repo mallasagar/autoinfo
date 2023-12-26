@@ -16,13 +16,11 @@ export class OrderComponent {
   ngOnInit(){
     this.getmyorder()
   }
-
   getmyorder(){
     const userid=Number(localStorage.getItem('userid'))
     this.orderservice.getorder(userid)
     .subscribe((data:any)=>{
      this.orderlist=data;
-     console.log(this.orderlist)
     })
   }
 

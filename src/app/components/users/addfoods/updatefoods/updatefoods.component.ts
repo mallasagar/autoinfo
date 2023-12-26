@@ -26,8 +26,8 @@ food:FoodModel= new FoodModel('','',0,0,'','','',0,0,'','','')
     this.foodservice.updatefoodbyid(this.data.foodid,this.food)
     .subscribe((success)=>{
       if(success){
-        console.log(success)
-        // this.toast.success("food updated successfully")
+        // console.log(success)
+        this.toast.success("food updated successfully")
       }
       else{
         this.toast.error("error while updating")

@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 import { favFoodModel } from 'src/app/models/favfood.model';
 import { NavigationStart,NavigationEnd,NavigationCancel,NavigationError } from '@angular/router';
 import { SingleorderComponent } from '../../customer/order/singleorder/singleorder.component';
+import { FavorderComponent } from '../../customer/fav/favorder/favorder.component';
 
 @Component({
   selector: 'app-home',
@@ -22,7 +23,7 @@ export class HomeComponent {
   searchText:string=''
   customerstatus:boolean=false;
   foodmark:string[]=[]
-  favfood:favFoodModel=new favFoodModel( 0,'' );
+  favfood:favFoodModel=new favFoodModel( 0,0,1 );
   categoryselected:string='';
   
   constructor(private foodservice:FoodService, 
@@ -86,16 +87,30 @@ foodbookmark:any;
     if(this.customerstatus){
       const customerid=Number(localStorage.getItem('userid'))
       this.favfood.userid=customerid;
-      this.favfood.foodid=id;
+      this.favfood.foodid=Number(id);
       this.foodbookmark=this.favfood
       // check if food is already marked or not
       this.foodservice.checkfoodmark(this.foodbookmark)
         .subscribe((success:boolean)=>{
          if(!success){
-          this.foodservice.markfood(this.foodbookmark)
-          .subscribe((success)=>{
-            this.toast.success("Added to Favorites list")
-          })
+          this.matdialog.open(FavorderComponent,{
+            width:"200px",
+            height:"200px",
+            data:{
+              customerid:customerid,
+              foodid:id
+            }
+      // this.foodservice.markfood(this.foodbookmark)
+      // .subscribe((success)=>{
+      //   if(success){
+      //     this.toast.success("Added to Favorites list")
+      //   }
+      })
+          // }
+          // )
+            
+
+
          }else{
           this.toast.error("Food is already marked as favorite in your favorite   list.")
          }

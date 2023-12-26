@@ -4,26 +4,26 @@
         <form class="space-y-4" #orderdata="ngForm"  (ngSubmit)="singleorder()" >
         <div class="flex flex-col gap-4">
                 <input type="text" disabled class="text-4xl font-bold bg-transparent"name="ordername" value="{{ fooddetail?.foodname }}" 
-                [(ngModel)]="order.ordername">
+                [(ngModel)]="order.customername">
           <div class="text-lg font-bold">
               Address:
               <input type="text" name="orderaddress" disabled value="({{ customerdetail?.customeraddress }})"
-              [(ngModel)]="order.orderaddress" class=" ms-4 bg-transparent font-medium">
+              [(ngModel)]="order.customeraddress" class=" ms-4 bg-transparent font-medium">
             </div>
             <div class="text-lg font-bold">
             CONTACT TO:
             <input type="text" name="ordercontact" disabled value="{{ customerdetail?.customercontact }}"
-            [(ngModel)]="order.ordercontact" class=" ms-4 bg-transparent font-medium">
+            [(ngModel)]="order.customercontact" class=" ms-4 bg-transparent font-medium">
           </div>
           <div class="text-lg font-bold  ">
             Quantity:
-            <input type="number" name="orderquantity" required max="5" min="1"
-            [(ngModel)]="order.orderquantity" class=" border rounded-sm ms-4 bg-transparent font-medium w-36 " placeholder="Quantity">
+            <input type="number" name="orderquantity" required max="5" min="1" value="1"
+            [(ngModel)]="orderdetail.orderquantity" class=" border rounded-sm ms-4 bg-transparent font-medium w-36 " placeholder="Quantity">
           </div>
           <div class="text-lg font-bold">
               FROM:
-              <input type="text" name="orderbrand"disabled value="{{ fooddetail?.foodmakerbrand }}"
-              [(ngModel)]="order.orderbrand" 
+              <input type="text" name="orderbrandname"disabled value="{{ fooddetail?.foodmakerbrand }}"
+              [(ngModel)]="orderdetail.orderbrandname" 
               class="ms-4 bg-transparent font-medium">
             </div>
           <div class="text-lg font-bold  " hidden>
@@ -34,8 +34,8 @@
             </div>
           <div class="text-lg font-bold">
               Price:
-              <input type="text" name="orderprice" required disabled value="{{ fooddetail?.foodprice  | currency:'USD':'symbol':'1.2-2'}}" 
-              [(ngModel)]="order.orderprice"
+              <input type="string" name="orderprice" required disabled value="{{ fooddetail?.foodprice  | currency:'USD':'symbol':'1.2-2'}}" 
+              [(ngModel)]="orderdetail.orderprice"
               class="ms-4 bg-transparent font-medium">
             </div>
             
@@ -43,6 +43,7 @@
         <input type="submit" class="bg-green-300 text-white p-2 mt-8 hover:bg-green-500 rounded-md w-full"
         value="singleorder" mat-dialog-close="close" [disabled]="!orderdata.valid" >
       </form>
+    
     </div>
   </mat-dialog-content>
   

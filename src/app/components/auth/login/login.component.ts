@@ -43,7 +43,6 @@ export class LoginComponent {
       if(user)
         {
         this.user=user;
-         console.log(user)
          this.checkuserrole()
         //  this.authservice.getRole(u);
           localStorage.setItem('userid',user.id);

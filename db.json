@@ -72,92 +72,72 @@
       "userrole": "customer",
       "customerpassword": "sagar",
       "id": 2
+    },
+    {
+      "customername": "bipin",
+      "customeraddress": "jorpati",
+      "customergender": "male",
+      "customerage": 12,
+      "customercontact": "9819292939",
+      "customeremail": "bipin@gmail.com",
+      "userrole": "customer",
+      "customerpassword": "bipin",
+      "id": 3
     }
   ],
   "orders": [
     {
-      "ordername": "momo",
-      "orderaddress": "ktm",
-      "ordercontact": "9810293848",
-      "orderprice": "170",
-      "orderquantity": 1,
-      "orderbrand": "sagar house resturant",
-      "orderstatus": "requested",
       "customername": "john",
-      "ordertime": "Tue Dec 19 2023 15:58:20 GMT+0545 (Nepal Time)",
+      "customercontact": "9810293848",
+      "customeraddress": "ktm",
       "customerid": 1,
-      "totalprice": "170",
-      "brandid": 6,
+      "totalprice": "",
+      "totalorder": "",
+      "time": "Tue Dec 26 2023 14:06:37 GMT+0545 (Nepal Time)",
+      "orderstatus": "request",
+      "order": [
+        {
+          "ordername": "french fries",
+          "orderprice": "250",
+          "orderquantity": 1,
+          "orderbrandname": "sagar house resturant",
+          "orderbrandid": 6,
+          "ordertotalprice": "250"
+        }
+      ],
       "id": 1
     },
     {
-      "ordername": "sprite",
-      "orderaddress": "ktm",
-      "ordercontact": "9810293848",
-      "orderprice": "95",
-      "orderquantity": 3,
-      "orderbrand": "sagar house resturant",
-      "orderstatus": "requested",
       "customername": "john",
-      "ordertime": "Tue Dec 19 2023 16:08:22 GMT+0545 (Nepal Time)",
+      "customercontact": "9810293848",
+      "customeraddress": "ktm",
       "customerid": 1,
-      "totalprice": "285",
-      "brandid": 6,
+      "totalprice": "NaN",
+      "totalorder": "",
+      "time": "Tue Dec 26 2023 14:07:02 GMT+0545 (Nepal Time)",
+      "orderstatus": "requested",
+      "order": [
+        {
+          "ordername": "samosa",
+          "orderprice": "25",
+          "orderquantity": 2,
+          "orderbrandname": "sagar house resturant",
+          "orderbrandid": 6,
+          "ordertotalprice": "NaN"
+        },
+        {
+          "ordername": "Paratha",
+          "orderprice": "75",
+          "orderquantity": 1,
+          "orderbrandname": "Hamrosan Resturant",
+          "orderbrandid": 4,
+          "ordertotalprice": "NaN"
+        }
+      ],
       "id": 2
-    },
-    {
-      "ordername": "Hamburger ",
-      "orderaddress": "ktm",
-      "ordercontact": "9810293848",
-      "orderprice": "340",
-      "orderquantity": 2,
-      "orderbrand": "Hamrosan Resturant",
-      "orderstatus": "requested",
-      "customername": "john",
-      "ordertime": "Tue Dec 19 2023 19:00:04 GMT+0545 (Nepal Time)",
-      "customerid": 1,
-      "totalprice": "680",
-      "brandid": 4,
-      "id": 3
-    },
-    {
-      "ordername": "sprite",
-      "orderaddress": "ktm",
-      "ordercontact": "9810293848",
-      "orderprice": "95",
-      "orderquantity": 3,
-      "orderbrand": "sagar house resturant",
-      "orderstatus": "requested",
-      "customername": "john",
-      "ordertime": "Tue Dec 19 2023 21:47:20 GMT+0545 (Nepal Time)",
-      "customerid": 1,
-      "totalprice": "285",
-      "brandid": 6,
-      "id": 4
     }
   ],
-  "favourites": [
-    {
-      "userid": 2,
-      "foodid": 8,
-      "id": 4
-    },
-    {
-      "userid": 2,
-      "foodid": 4,
-      "id": 5
-    },
-    {
-      "userid": 2,
-      "foodid": 1,
-      "id": 6
-    },
-    {
-      "userid": 2,
-      "foodid": 5,
-      "id": 7
-    }
-  ],
+  "favourites": [],
   "foods": [
     {
       "foodname": "Hamburger ",
@@ -192,7 +172,7 @@
     {
       "foodname": " Cheese Burger",
       "foodimageurl": "https://th.bing.com/th/id/OIP.387PojRI5pukjUndARHSuAHaE8?w=266&h=180&c=7&r=0&o=5&pid=1.7",
-      "foodprice": "299",
+      "foodprice": "199",
       "quantity": 1,
       "foodmakerstatus": "",
       "foodmakeraddress": "skand",
@@ -409,7 +389,7 @@
       "foodmakerbrand": "sagar house resturant",
       "foodmakercontact": "9818282928",
       "userid": 6,
-      "foodcategory": "foods",
+      "foodcategory": "Snacks",
       "foodcuisine": "American Cuisine:",
       "fooddescription": "potato dish",
       "id": 21
@@ -484,7 +464,7 @@
       "foodmakerbrand": "Hamrosan Resturant",
       "foodmakercontact": "9812283746",
       "userid": 4,
-      "foodcategory": "snacks",
+      "foodcategory": "Snacks",
       "foodcuisine": "French Cuisine",
       "fooddescription": "French fries, chips, finger chips, french-fried potatoes, or simply fries, are batonnet or allumette-cut deep-fried potatoes of disputed origin from Belgium or France. They are prepared by cutting potatoes into even strips, drying them, and frying them, usually in a deep fryer.",
       "id": 27

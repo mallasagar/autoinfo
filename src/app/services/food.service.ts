@@ -13,6 +13,7 @@ export class FoodService {
     FoodCartChanged$ = this.foodcart.asObservable();
     foodid:any[]=[];
     foodarray:string[] = [];
+    cartid:number=0;
 
 
 createfood(data: any): Observable<any>{
@@ -76,7 +77,18 @@ markfood(data: any ){
     const url = `${API_BASE_URL}${API_ENDPOINTS.FAVS}`;
     return this.http.post(url,data);
 }
+getmarkfood(customerid:number){
+    const url = `${API_BASE_URL}${API_ENDPOINTS.FAVS}`;
+    return this.http.get<any[]>(url).pipe(
+        map((data)=>{return data.filter((item)=>(item.userid===customerid)
+            )})
+      )
+}
 
+deletemarkedfood(cartid:number){
+    const url = `${API_BASE_URL}${API_ENDPOINTS.FAVS}`;
+        return this.http.delete(`${url}/${cartid}  `)
+}
 checkfoodmark(favdata:any){
         const url = `${API_BASE_URL}${API_ENDPOINTS.FAVS}`;
         return this.http.get<any[]>(url).pipe(

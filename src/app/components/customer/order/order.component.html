@@ -1,44 +1,41 @@
 <div class="w-full bg-white py-12 px-8">
     <ng-container>
-
         <table class="h-auto w-full gap-2 " >
-            <thead class="border bg-green-200 text-center">
+            <thead class="border-4 bg-green-200 text-center">
                 <tr>
                     <td>S.N</td>
                     <td>Details</td>
-                   
-                    <td>Modify</td>
+                    <td>Order Status</td>
                 </tr>
             </thead>
-            <tbody class="border text-center" *ngFor="let item of orderlist">
+            <tbody class="border-4 text-center" *ngFor="let item of orderlist; let i = index">
                 <tr class="border h-16 py-8">
-                    <td>1 </td>
-                    <td>
-                        <tr>
-                            <td>Name:{{item.ordername}}</td>
-                        </tr>
-                        <tr>
-                            <td>From: {{item.orderbrand}}</td>
-                        </tr>
-                        <tr>
-                            <td>Quantity: {{item.orderquantity}}</td>
-                        </tr>
-                        <tr>
-                            <td>Price: {{item.orderprice}}</td>
-                        </tr>
-                        <tr>
-                            <td>Total: {{item.totalprice}}</td>
-                        </tr>
-                        <tr>
-                            <td>Time: {{item.ordertime}}</td>
-                        </tr>
-                        
-                    </td>
-                    <td> <span  class="hover:bg-red-600 hover:rounded-md hover:text-white p-2">Delete</span>
-                        <span class="ms-8 hover:bg-green-600 hover:rounded-md hover:text-white p-2" >Confirm</span>
-                    </td>
+                  <td class="border-2 ">{{ i + 1 }}</td>
+                  <td class="w-full flex-col sm:flex-col md:flex-row md:w-6/12 justify-center items-center">
+                    <div class="flex w-11/12 flex-col gap-4 items-center">
+                      <ng-container *ngFor="let orderItem of item.order; let j = index">
+                        <div class="my-4 rounded-lg bg-green-200 w-10/12 p-4">
+                          <h2>Order: {{ j + 1 }}</h2>
+                          <p>Name: {{ orderItem.ordername }}</p>
+                          <p>From: {{ orderItem.orderbrandname }}</p>
+                          <p>Quantity: {{ orderItem.orderquantity }}</p>
+                          <p>Actual Price:$ {{orderItem.orderprice }}</p>
+                        </div>
+                      </ng-container>
+                    </div>
+                    <div class="items-baseline p-4  align-middle">
+                      <p>Total with Delivery Charge: $ {{ item.totalprice  }}</p>
+                      <p>Time: {{ item.time }}</p>
+                    </div>
+                  </td>
+                  <td class="border-2 p-4 w-6/12">
+                    <!-- Include your actual progress bar component or Tailwind styling here -->
+                    <div class="bg-blue-500 h-4 w-/12 rounded-full">
+                      <!-- Progress bar content or styling -->
+                    </div>
+                  </td>
                 </tr>
-            </tbody>
+              </tbody>
         </table>
     </ng-container>
 </div>

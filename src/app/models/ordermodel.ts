@@ -1,39 +1,52 @@
-
-export class OrderModel{
+export class Orderdetails{
     ordername:string;
-    orderaddress:string;
-    ordercontact:string;
-    orderprice:string;
-    orderquantity:number;
-    orderbrand:string;
-    orderstatus:string;
+    orderprice:number;
+    orderquantity:string;
+    orderbrandname:string;
+    orderbrandid:string;
+    ordertotalprice:string
+    constructor(
+        ordername:string,
+        orderprice:number,
+        orderquantity:string,
+        orderbrandname:string,
+        orderbrandid:string,
+        ordertotalprice:string){
+            this.ordername=ordername
+            this.orderprice=orderprice
+            this.orderquantity=orderquantity
+            this.orderbrandname=orderbrandname
+            this.orderbrandid=orderbrandid
+            this.ordertotalprice=ordertotalprice
+    }
+}  
+export class OrderModel{
     customername:string;
-    ordertime:string;
+    customercontact:string;
+    customeraddress:string;
     customerid:string;
     totalprice:string;
-    brandid:string;
-
-constructor(ordername:string, 
-            orderaddress:string,
-            ordercontact:string, 
-            orderprice:string, 
-            orderquantity:number, 
-            orderbrand:string, 
-            orderstatus:string,
-            customername:string,ordertime:string,customerid:string,
-            totalprice:string,brandid:string){
-                this.ordername=ordername
-                this.orderaddress=orderaddress
-                this.ordercontact=ordercontact
-                this.orderprice=orderprice
-                this.orderquantity=orderquantity
-                this.orderbrand=orderbrand
-                this.orderstatus=orderstatus
+    totalorder:string;
+    time:string;
+    orderstatus:string;
+    order:Orderdetails[];
+constructor(customername:string,
+            customercontact:string,
+            customeraddress:string,
+            customerid:string,
+            totalprice:string,
+            totalorder:string,
+            time:string,
+            orderstatus:string,           
+            ){
                 this.customername=customername
-                this.ordertime=ordertime
+                this.customercontact=customercontact
+                this.customeraddress=customeraddress
                 this.customerid=customerid
                 this.totalprice=totalprice
-                this.brandid=brandid
+                this.totalorder=totalorder
+                this.time=time
+                this.orderstatus=orderstatus
+                this.order=[]              
             }
-
 }

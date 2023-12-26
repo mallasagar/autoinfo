@@ -8,22 +8,24 @@
                     <td>Food Name</td>
                     <td>From</td>
                     <td>Quantity</td>
-                    <td>Price</td>
+                    <td>Price</td>   
                     <td>Modify</td>
                 </tr>
             </thead>
-            <tbody class="border text-center" *ngFor="let item of foodcartlist">
+            <tbody class="border text-center" *ngFor="let item of foodcartlist let i=index">
                 <tr class="border h-12">
-                    <td> {{item.serialNumber}}</td>
+                    <td> {{i+1}}</td>
                     <td> {{item.foodname}}</td>
                     <td> {{item.foodmakerbrand}}</td>
-                    <td> <input type="number" value="{{item.quantity}}" required max="5" min="1" class="border w-12 rounded-md text-center" ></td>
+                    <td> {{item.favorder}}</td>
                     <td> {{item.foodprice}}</td>
                     <td> <span (click)="deletecart(item.id)" class="hover:bg-red-600 hover:rounded-md hover:text-white p-2">Delete</span>
-                        <span class="ms-8 hover:bg-green-600 hover:rounded-md hover:text-white p-2" >Confirm</span>
                     </td>
                 </tr>
             </tbody>
         </table>
+        <div class="w-full flex justify-center mt-8">
+            <button  class="mx-auto border px-4 py-3 hover:shadow-blue-500 shadow-lg rounded-md shadow-green-500" (click)="buyall()">Buy All</button> 
+        </div>
     </ng-container>
 </div>
