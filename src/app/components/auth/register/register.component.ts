@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent {
   // creating an enpty instance of the user model
-  user:UserModel=new UserModel( '','', '', '', '' , '', );
+  user:UserModel=new UserModel( '','', '', '', '' , '','' );
   emails: string[] = [];
   emailnumber:number=0;
   allemail:any;
@@ -68,6 +68,6 @@ export class RegisterComponent {
   // clear a registration form the user forms or usermodel
   private resetForm() {
     // Reset the form or clear the user object based on your requirements
-    this.user = new UserModel('','', '', '', '', '',  );
+    this.user = new UserModel('','', '', '', '', '', '' );
   }
 }

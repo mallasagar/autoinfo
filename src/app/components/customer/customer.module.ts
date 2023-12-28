@@ -23,6 +23,8 @@ import { customerguardGuard } from 'src/app/guard/customerguard.guard';
 import { OrderComponent } from './order/order.component';
 import { SingleorderComponent } from './order/singleorder/singleorder.component';
 import { FavorderComponent } from './fav/favorder/favorder.component';
+import { ResturantComponent } from '../pages/home/resturant/resturant.component';
+import { OrderstatusComponent } from './order/orderstatus/orderstatus.component';
 
 const routes: Routes = [
   {path:'',component:CustomerlayoutComponent  ,children:[
@@ -31,6 +33,7 @@ const routes: Routes = [
     {path:'signin', component:SigninComponent},
     {path:'customer/favourite',canActivate:[customerguardGuard], component:FavComponent},
     {path:'customer/orders',canActivate:[customerguardGuard], component:OrderComponent},
+    {path:'customer/orderstatus',canActivate:[customerguardGuard], component:OrderstatusComponent},
     { path: '',   redirectTo: '/home', pathMatch:  'full' },
   ]
   }
@@ -38,7 +41,7 @@ const routes: Routes = [
 
 
 @NgModule({
-  declarations: [CustomerlayoutComponent, NavbarComponent, HomeComponent, AboutComponent, ContactComponent, SigninComponent,SignupComponent, DetailComponent, CustomerprofileComponent, FavComponent, DeletecartComponent, OrderComponent, SingleorderComponent, FavorderComponent],
+  declarations: [CustomerlayoutComponent, NavbarComponent,ResturantComponent, HomeComponent, AboutComponent, ContactComponent, SigninComponent,SignupComponent, DetailComponent, CustomerprofileComponent, FavComponent, DeletecartComponent, OrderComponent, SingleorderComponent, FavorderComponent, OrderstatusComponent],
   imports: [HttpClientModule,CommonModule,RouterModule.forChild(routes),FontAwesomeModule,FormsModule,MatCommonModule,MatMenuModule, MatDialogModule],
   providers:[],
   exports:[]

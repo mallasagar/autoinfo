@@ -4,6 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { map,filter } from 'rxjs';
 import { OrderModel, Orderdetails } from '../models/ordermodel';
 import { BehaviorSubject } from 'rxjs';
+import { Observable } from 'rxjs';
+import { catchError , throwError} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -45,5 +47,34 @@ export class OrderService {
         })
       );
     } 
+
+    getorderbyid(id:number){
+      const url = `${API_BASE_URL}${API_ENDPOINTS.ORDERS}/${id}`
+      return this.http.get<any>(url);
+     
+    }
+    updateorder(id: number, updatedData: any): Observable<any> {
+      const url = `${API_BASE_URL}${API_ENDPOINTS.ORDERS}/${id}`;
+      
+      // Log the data being sent to the server
+      console.log('Updating order with data:', updatedData);
+    
+      return this.http.put<any>(url, updatedData).pipe(
+        catchError((error) => {
+          // Handle the error (log, notify user, etc.)
+          console.error('Error updating order:', error);
+          // Propagate the error to the subscriber
+          return throwError(error);
+        })
+      );
+    }
+    
+
+    // updateorder(id: number, updatedData: any) : Observable<any> {
+    //     const url = `${API_BASE_URL}${API_ENDPOINTS.ORDERS}/${id}`;
+    //     return this.http.put<any>(url, updatedData);
+    //   }
+
+    
 
 }

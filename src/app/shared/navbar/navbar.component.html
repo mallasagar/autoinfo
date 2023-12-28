@@ -36,7 +36,7 @@
                     <a routerLink="customer/orders" [routerLinkActive]="'active'">
                         <menu mat-menu-item class="  text-orange-700 hover:text-orange-600 font-semibold     text-2xl"><fa-icon [icon]="faorder" class="text-orange-400 me-2"   ></fa-icon> Order List</menu>
                     </a>
-                    <a routerLink="category/orderstatus" [routerLinkActive]="'active'">
+                    <a routerLink="customer/orderstatus" [routerLinkActive]="'active'">
                         <menu mat-menu-item class="  text-orange-700 hover:text-orange-600 font-semibold     text-2xl"><fa-icon [icon]="faorderstatus" class="text-orange-400 me-2"   ></fa-icon> Delivery Status</menu>
                     </a>
                         <menu mat-menu-item (click)="customerloggedout()"*ngIf="customerloggedin" class="  text-orange-700 hover:text-orange-600 font-semibold     text-2xl"><fa-icon [icon]="falogout" class="text-orange-400 me-2"   ></fa-icon> LogOut</menu>

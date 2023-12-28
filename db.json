@@ -14,6 +14,7 @@
       "userage": 12,
       "usercontact": "9812283746",
       "userbrand": "Hamrosan Resturant",
+      "userimage": "https://static.vecteezy.com/system/resources/previews/000/331/796/original/vector-pizzeria-logo-template.jpg",
       "useremail": "hamrosan@gmail.com",
       "userrole": "user",
       "userpassword": "hamrosan",
@@ -25,6 +26,7 @@
       "usercontact": "9818293848",
       "userbrand": "burger house",
       "useremail": "burgerhouse@gmail.com",
+      "userimage": "https://maverickdigital.in/wp-content/uploads/2020/06/HTC-creative-006.png",
       "userrole": "user",
       "userpassword": "burgerhouse",
       "id": 5
@@ -34,6 +36,7 @@
       "useraddress": "skand",
       "usercontact": "9818282928",
       "userbrand": "sagar house resturant",
+      "userimage": "https://th.bing.com/th/id/R.3923d34c0c5061a8cbee2c7751f817e8?rik=iIddwcj%2bPPxRXw&pid=ImgRaw&r=0",
       "useremail": "sagarhouse@gmail.com",
       "userrole": "user",
       "userpassword": "sagar",
@@ -44,11 +47,13 @@
       "useraddress": "imadol",
       "usercontact": "9819283833",
       "userbrand": "Chicken Station",
+      "userimage": "https://th.bing.com/th/id/OIP.kIUSHaGob0fffzNLUdIJHwHaHa?rs=1&pid=ImgDetMain",
       "useremail": "chickenstation@gmail.com",
       "userrole": "user",
       "userpassword": "burgerhouse",
       "id": 7
     }
+ 
   ],
   "customers": [
     {
@@ -72,17 +77,6 @@
       "userrole": "customer",
       "customerpassword": "sagar",
       "id": 2
-    },
-    {
-      "customername": "bipin",
-      "customeraddress": "jorpati",
-      "customergender": "male",
-      "customerage": 12,
-      "customercontact": "9819292939",
-      "customeremail": "bipin@gmail.com",
-      "userrole": "customer",
-      "customerpassword": "bipin",
-      "id": 3
     }
   ],
   "orders": [
@@ -91,18 +85,37 @@
       "customercontact": "9810293848",
       "customeraddress": "ktm",
       "customerid": 1,
-      "totalprice": "",
+      "totalprice": "190",
       "totalorder": "",
-      "time": "Tue Dec 26 2023 14:06:37 GMT+0545 (Nepal Time)",
+      "time": "Thu Dec 28 2023 13:03:40 GMT+0545 (Nepal Time)",
       "orderstatus": "request",
       "order": [
         {
-          "ordername": "french fries",
-          "orderprice": "250",
-          "orderquantity": 1,
+          "ordername": " Cheese Burger",
+          "orderprice": "199",
+          "orderquantity": 2,
           "orderbrandname": "sagar house resturant",
           "orderbrandid": 6,
-          "ordertotalprice": "250"
+          "ordertotalprice": "398",
+          "suborderstatus": "completed"
+        },
+        {
+          "ordername": "momo",
+          "orderprice": "170",
+          "orderquantity": 3,
+          "orderbrandname": "sagar house resturant",
+          "orderbrandid": 6,
+          "ordertotalprice": "510",
+          "suborderstatus": "completed"
+        },
+        {
+          "ordername": "coca cola",
+          "orderprice": "95",
+          "orderquantity": 2,
+          "orderbrandname": "sagar house resturant",
+          "orderbrandid": 6,
+          "ordertotalprice": "190",
+          "suborderstatus": "failed"
         }
       ],
       "id": 1
@@ -112,26 +125,19 @@
       "customercontact": "9810293848",
       "customeraddress": "ktm",
       "customerid": 1,
-      "totalprice": "NaN",
+      "totalprice": "",
       "totalorder": "",
-      "time": "Tue Dec 26 2023 14:07:02 GMT+0545 (Nepal Time)",
-      "orderstatus": "requested",
+      "time": "Thu Dec 28 2023 13:03:57 GMT+0545 (Nepal Time)",
+      "orderstatus": "request",
       "order": [
         {
           "ordername": "samosa",
           "orderprice": "25",
-          "orderquantity": 2,
+          "orderquantity": 5,
           "orderbrandname": "sagar house resturant",
           "orderbrandid": 6,
-          "ordertotalprice": "NaN"
-        },
-        {
-          "ordername": "Paratha",
-          "orderprice": "75",
-          "orderquantity": 1,
-          "orderbrandname": "Hamrosan Resturant",
-          "orderbrandid": 4,
-          "ordertotalprice": "NaN"
+          "ordertotalprice": "125",
+          "suborderstatus": "completed"
         }
       ],
       "id": 2

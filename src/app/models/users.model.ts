@@ -4,6 +4,7 @@ export class UserModel {
     // usergender:string;
     // userage:string;
     userbrand:string;
+    userimage:string;
     usercontact:string;
     useremail: string;
     userrole:string;
@@ -15,6 +16,7 @@ export class UserModel {
         userpassword: string, 
         useremail: string,
          userbrand:string,
+         userimage:string,
         // usergender:string, 
         // userage:string
         )
@@ -25,6 +27,7 @@ export class UserModel {
       // this.userage=userage;
       this.usercontact = usercontact;
       this.userbrand = userbrand;
+      this.userimage=userimage;
       this.useremail = useremail;
       this.userrole="user";
       this.userpassword = userpassword;

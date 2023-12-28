@@ -36,7 +36,10 @@ export class AuthenticationService {
   }
   getusers(){
     const url=`${this.baseurl}${API_ENDPOINTS.USERS}`
-   return this.http.get(url)
+    return this.http.get<any[]>(url).pipe(
+      map((data) => {
+        return data.filter((item) => item.userrole==='user');
+      }))
   }
   
   checkemailforlogin(useremail:any):any{
@@ -97,4 +100,7 @@ export class AuthenticationService {
       this.userroleservice.setUserRole;
       this.toast.success("Logout Successfully");
     }
+
+
+
 }

@@ -9,9 +9,9 @@ import { OrderService } from 'src/app/services/order.service';
 export class OrderComponent {
 
   constructor(private orderservice: OrderService){
-    
   }
   orderlist:any;
+  total:number[]=[]
 
   ngOnInit(){
     this.getmyorder()
@@ -21,6 +21,17 @@ export class OrderComponent {
     this.orderservice.getorder(userid)
     .subscribe((data:any)=>{
      this.orderlist=data;
+
+     for(let i=0;i<data.length;i++){
+       let newprice=0;
+      for(let j=0; j<data[i].order.length;j++){
+        const price=Number(data[i].order[j].ordertotalprice);
+        const total=price+newprice;
+        newprice = total;
+      }
+      this.total.push(newprice);
+     }
+     console.log(this.total)
     })
   }
 

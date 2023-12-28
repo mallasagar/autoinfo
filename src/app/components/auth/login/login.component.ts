@@ -13,7 +13,7 @@ import { UserroleService} from 'src/app/services/userrole.service';
 })
 export class LoginComponent {
   currentRoute: string='';
-  user:UserModel=new UserModel( '','', '', '', '' , '', );
+  user:UserModel=new UserModel( '','', '', '', '' , '','' );
 
   constructor(private authservice: AuthenticationService,
               private route:Router, 
@@ -64,7 +64,7 @@ export class LoginComponent {
 
 // reset login form
   resetlogin(){
-   this.user = new UserModel('','', '', '', '', '',  );
+   this.user = new UserModel('','', '', '', '', '', '' );
     }
 
 //checkuser roles

@@ -5,6 +5,7 @@
                     <td>S.N</td>
                     <td>Customer Details</td>
                     <td>Order Details</td>
+                    
                 </tr>
             </thead>
             <ng-container *ngFor="let item of userorderlist; let x= index">
@@ -12,31 +13,46 @@
                     <tr class="border h-16 py-8">
                     <td class="border-2 ">{{x+1}}</td>
                         
-                    <td class="w-full flex-col sm:flex-col md:flex-row gap-4 md:w-4/12 justify-start items-start">
-                    <div class="flex w-11/12 flex-col ms-2 leading-relaxed items-start">
-                          <span> Name: {{item.customername}}</span>
-                          <span>Address: {{item.customeraddress}}</span>
-                          <span>Contact:{{item.customercontact}} </span>
-                          <span>Time:{{item.time}} </span>
-                          <p>Total price: </p>
-                    </div>
-                   
-                  </td>
-                  <td class="w-full flex-col sm:flex-col md:flex-row md:w-8/12 justify-center items-center">
-                    <div class="flex w-11/12 flex-col gap-4 items-center">
-                        <ng-container *ngFor="let order of item.order"  >
-                          <ng-container [ngSwitch]="customerid">
-                            <ng-container *ngSwitchCase="order.orderbrandid">
-                          <div class="my-4 rounded-lg bg-green-50 w-10/12 p-4">
-                            <p>Order:{{order.ordername}} </p>
-                            <p>Quantity:{{order.orderquantity}} </p>
-                            <p>Actual Price:$ {{order.orderprice}}</p>
-                          </div>
+                    <td class="w-full flex-col sm:flex-col md:flex-row gap-4 md:w-11/12 justify-start items-start">
+                      <div class="flex items-center ">
+                        <div class="flex w-11/12 flex-col ms-2 leading-relaxed items-start me-auto">
+                              <span> Name: {{item.customername}}</span>
+                              <span>Address: {{item.customeraddress}}</span>
+                              <span>Contact:{{item.customercontact}} </span>
+                              <span>Time:{{item.time}} </span>
+                              <p>Total price: {{item.order[0].ordertotalprice}}</p>
+                        </div>
+                        <div class="flex w-11/12 flex-col gap-4 items-center ">
+                          <ng-container *ngFor="let order of item.order ; let y=index"  >
+                            <ng-container [ngSwitch]="customerid">
+                              <ng-container *ngSwitchCase="order.orderbrandid">
+                            <div class="my-4 rounded-lg bg-green-50 w-10/12 p-4">
+                              <p>Order:{{order.ordername}} </p>
+                              <p>Quantity:{{order.orderquantity}} </p>
+                              <p>Actual Price:$ {{order.orderprice}}</p>
+                            </div>
+                            <div class="w-auto max-w-md mx-auto ">
+                              <form #confirmorderdata="ngForm" (ngSubmit)="Setorderstatus(item.id,y)">
+        
+                                <label for="example-select" class="block text-sm font-medium text-gray-700">Order Status:{{order.suborderstatus}}</label>
+                                <select id="example-select" name="example-select" [disabled]="order.suborderstatus === 'completed' || order.suborderstatus === 'failed'" required value="order.suborderstatus" [(ngModel)]="orderdetail.suborderstatus" class="mt-1 p-2 block w-full border border-gray-300 rounded-md bg-white">
+                                  <option value="request" >Requested</option>
+                                  <option value="preparing">Preparing</option>
+                                  <option value="delivering">Delivering</option>
+                                  <option value="completed">Completed</option>
+                                  <option value="failed">Failed</option>
+                                  <!-- Add more options as needed -->
+                                </select>
+                                <input type="submit" class="bg-green-300 text-white p-2 mt-8 hover:bg-green-500 rounded-md w-full"
+                                value="confirmorderdata" [disabled]="!confirmorderdata.valid">
+                              </form>
+                            </div>
+                          </ng-container>
                         </ng-container>
-                      </ng-container>
-                      </ng-container>
+                        </ng-container>
+                        </div>  
+
                       </div>
-                      
                   </td>
                   </tr>
               </tbody>

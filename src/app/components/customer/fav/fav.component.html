@@ -25,7 +25,8 @@
             </tbody>
         </table>
         <div class="w-full flex justify-center mt-8">
-            <button  class="mx-auto border px-4 py-3 hover:shadow-blue-500 shadow-lg rounded-md shadow-green-500" (click)="buyall()">Buy All</button> 
+            <input type="button" value="Buy ALL" class="mx-auto border px-4 py-3 hover:shadow-blue-500 shadow-lg rounded-md shadow-green-500"
+             (click)="buyall()"  [hidden]="fav" >
         </div>
     </ng-container>
 </div>

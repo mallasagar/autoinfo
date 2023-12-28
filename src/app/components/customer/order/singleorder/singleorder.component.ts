@@ -23,7 +23,7 @@ export class SingleorderComponent {
   customerdetail:any;
 
   order: OrderModel= new OrderModel('','','','','','','','')
-  orderdetail:Orderdetails= new Orderdetails('',1,'','','','')
+  orderdetail:Orderdetails= new Orderdetails('',1,'','','','','')
   
 
   ngOnInit(){
@@ -45,12 +45,13 @@ export class SingleorderComponent {
       this.orderdetail.ordername=this.fooddetail.foodname,
       this.orderdetail.orderprice=this.fooddetail.foodprice,
       this.orderdetail.orderquantity,
-      
       this.orderdetail.orderbrandname=this.fooddetail?.foodmakerbrand,
       this.orderdetail.orderbrandid=this.fooddetail.userid,
-      this.orderdetail.ordertotalprice=String(Number(this.orderdetail.orderprice)*Number(this.orderdetail.orderquantity))
+      this.orderdetail.ordertotalprice=String(Number(this.orderdetail.orderprice)*Number(this.orderdetail.orderquantity)),
+      this.orderdetail.suborderstatus='request',
       );
       this.order.order.push(orderDetails)
+      
 
 
     

@@ -25,6 +25,7 @@ export class FavComponent implements OnInit {
   customerdata:any;
   favorder:any;
   cartid:number=0;
+  fav:boolean=false;
   // order: OrderModel= new OrderModel('','','','',1,'','','','','','','',1)
   constructor(private foodservice:FoodService,
               private customerservice:CustomerService,
@@ -34,10 +35,15 @@ export class FavComponent implements OnInit {
   }
 
   order:OrderModel=new OrderModel('','','','','','','','')
-  orderdetail:Orderdetails= new Orderdetails('',1,'','','','')
+  orderdetail:Orderdetails= new Orderdetails('',1,'','','','','')
 
   ngOnInit(): void {
       this.getfavfoods() 
+      if(this.foodcartlist.length>0){
+        this.fav=true;
+    }else{
+      this.toast.warning("No Food in Cart")
+    }
   }
 
 //   getFoodDetail(foodid: string) {
@@ -243,7 +249,11 @@ getcustomerdetail(){
 }
 
 buyall(){
+  this.getfavfoods()
   this.getcustomerdetail()
+ 
+ 
+
   const customerid= Number(localStorage.getItem('userid'))
   this.customerservice.getcustomerbyid(customerid)
     .subscribe((customerdata:any)=>{
@@ -253,19 +263,20 @@ buyall(){
       this.order.customeraddress=this.customerdata.customeraddress
       this.order.customercontact=this.customerdata.customercontact
       this.order.customerid=this.customerdata.id
-      this.order.orderstatus="requested"
+      this.order.orderstatus="request"
       this.order.time=String(Date())
      
       
       for(let i=0;i<this.foodcartlist.length;i++ ){
-        const orderdetail= new Orderdetails('',1,'','','','');
+        const orderdetail= new Orderdetails('',1,'','','','','');
           orderdetail.orderbrandid=this.foodcartlist[i].userid,
           orderdetail.orderbrandname=this.foodcartlist[i].foodmakerbrand,
           orderdetail.ordername=this.foodcartlist[i].foodname,
           orderdetail.orderprice=this.foodcartlist[i].foodprice,
           orderdetail.orderquantity=this.foodcartlist[i].favorder,
           // orderdetail.orderquantity = this.foodcartlist[i].foodquantity;
-          orderdetail.ordertotalprice = (this.foodcartlist[i].foodquantity * this.foodcartlist[i].foodprice).toString();
+          orderdetail.ordertotalprice = String(Number(orderdetail.orderprice) * Number(orderdetail.orderquantity));
+          orderdetail.suborderstatus='request'
           this.order.order.push(orderdetail);   
         
           this.order.totalprice=orderdetail.ordertotalprice
@@ -281,6 +292,7 @@ buyall(){
           .subscribe((success)=>{
             if(success){
               this.deleteallcart()
+              this.getfavfoods()
               this.toast.success("Order created successfully")
             }
             else{

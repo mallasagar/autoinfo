@@ -5,19 +5,21 @@ export class Orderdetails{
     orderbrandname:string;
     orderbrandid:string;
     ordertotalprice:string
+    suborderstatus:string;
     constructor(
         ordername:string,
         orderprice:number,
         orderquantity:string,
         orderbrandname:string,
         orderbrandid:string,
-        ordertotalprice:string){
+        ordertotalprice:string,suborderstatus:string){
             this.ordername=ordername
             this.orderprice=orderprice
             this.orderquantity=orderquantity
             this.orderbrandname=orderbrandname
             this.orderbrandid=orderbrandid
             this.ordertotalprice=ordertotalprice
+            this.suborderstatus=suborderstatus
     }
 }  
 export class OrderModel{
@@ -49,4 +51,11 @@ constructor(customername:string,
                 this.orderstatus=orderstatus
                 this.order=[]              
             }
+}
+
+export class SubOrderModel{
+    suborderstatus:string;
+    constructor(suborderstatus:string){
+        this.suborderstatus=suborderstatus
+    }
 }
