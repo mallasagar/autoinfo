@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { API_BASE_URL, API_ENDPOINTS} from '../api.constant';
 import { HttpClient } from '@angular/common/http';
-import { map,filter } from 'rxjs';
-import { OrderModel, Orderdetails } from '../models/ordermodel';
+import { map } from 'rxjs';
 import { BehaviorSubject } from 'rxjs';
 import { Observable } from 'rxjs';
 import { catchError , throwError} from 'rxjs';
@@ -16,13 +15,15 @@ export class OrderService {
     order$ = this.ordervalue.asObservable();
 
 
-    
-
     createorder(order:any){
             const url=`${API_BASE_URL}${API_ENDPOINTS.ORDERS}`
             return this.http.post(url, order)
           }
-          
+       
+    getallorder(){
+      const url=`${API_BASE_URL}${API_ENDPOINTS.ORDERS}`
+      return  this.http.get(url)
+    }      
           
     getorder(id:number){
       const url=`${API_BASE_URL}${API_ENDPOINTS.ORDERS}`
@@ -33,7 +34,6 @@ export class OrderService {
 
     getuserorder(userid: number) {
       const url = `${API_BASE_URL}${API_ENDPOINTS.ORDERS}`;
-  
       return this.http.get(url).pipe(
         map((data: any) => {
           return data.filter((order: any) => {
@@ -69,12 +69,4 @@ export class OrderService {
       );
     }
     
-
-    // updateorder(id: number, updatedData: any) : Observable<any> {
-    //     const url = `${API_BASE_URL}${API_ENDPOINTS.ORDERS}/${id}`;
-    //     return this.http.put<any>(url, updatedData);
-    //   }
-
-    
-
 }

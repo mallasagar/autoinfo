@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { ShareddataService } from 'src/app/services/shareddata.service';
 
 @Component({
   selector: 'app-resturant',
@@ -8,7 +9,7 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 })
 export class ResturantComponent {
 
-  constructor( private userservice: AuthenticationService){
+  constructor( private userservice: AuthenticationService, private sharedservice:ShareddataService){
 
   }
   resturantlist:any[]=[]
@@ -18,13 +19,14 @@ export class ResturantComponent {
       this.getallresturant()
   }
 
-
+setresturant(id:number){
+  this.sharedservice.setresturants(id)
+}
 
   getallresturant(){
       this.userservice.getusers()
       .subscribe((data:any)=>{
-        this.resturantlist=data;
-        console.log(this.resturantlist)
+        this.resturantlist=data;      
       })
   }
 

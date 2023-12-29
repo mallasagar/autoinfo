@@ -31,7 +31,7 @@ export class OrderComponent {
       }
       this.total.push(newprice);
      }
-     console.log(this.total)
+    
     })
   }
 

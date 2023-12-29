@@ -3,11 +3,9 @@ import { ToastrService } from 'ngx-toastr';
 import { FoodService } from 'src/app/services/food.service';
 import { MatDialog} from '@angular/material/dialog';
 import { DetailComponent } from '../detail/detail.component';
-import { faBook, faBookmark,faSquarePlus} from '@fortawesome/free-solid-svg-icons';
+import { faSquarePlus} from '@fortawesome/free-solid-svg-icons';
 import { ShareddataService } from 'src/app/services/shareddata.service';
-import { Router } from '@angular/router';
 import { favFoodModel } from 'src/app/models/favfood.model';
-import { NavigationStart,NavigationEnd,NavigationCancel,NavigationError } from '@angular/router';
 import { SingleorderComponent } from '../../customer/order/singleorder/singleorder.component';
 import { FavorderComponent } from '../../customer/fav/favorder/favorder.component';
 
@@ -25,20 +23,18 @@ export class HomeComponent {
   foodmark:string[]=[]
   favfood:favFoodModel=new favFoodModel( 0,0,1 );
   categoryselected:string='';
+  resturantselected:number=0;
   
   constructor(private foodservice:FoodService, 
               private toast: ToastrService, 
               private matdialog: MatDialog,
-              private route: Router,
-              private sharedservice:ShareddataService,private router:Router){
-  }
+              private sharedservice:ShareddataService,){}
 
 showsearch:Boolean = false;
 foodbookmark:any;
 
 
   ngOnInit(){
-    this.getrouterevent()
     this.getallfood()
     this.sharedservice.searchTextChanged$.subscribe((searchtext)=>{
       this.searchText=searchtext;
@@ -46,11 +42,11 @@ foodbookmark:any;
     this.sharedservice.categoryTextChanged$.subscribe((categorydata)=>{
       this.categoryselected=categorydata;
     })
-  }
-
-  getrouterevent(){
-   
-      
+    this.sharedservice.resturanttextchanged$.subscribe((resturantdata)=>{
+      this.resturantselected=resturantdata
+      console.log(this.resturantselected)
+    })
+ 
   }
 
   checkcustomerloggedin(){
@@ -81,7 +77,6 @@ foodbookmark:any;
     }
   }
 
-  
   markfood(id:string){
     this.checkcustomerloggedin()
     if(this.customerstatus){
@@ -100,24 +95,13 @@ foodbookmark:any;
               customerid:customerid,
               foodid:id
             }
-      // this.foodservice.markfood(this.foodbookmark)
-      // .subscribe((success)=>{
-      //   if(success){
-      //     this.toast.success("Added to Favorites list")
-      //   }
       })
-          // }
-          // )
-            
-
-
          }else{
           this.toast.error("Food is already marked as favorite in your favorite   list.")
          }
         })      
     }
   }
-
 
   viewfood(id:number){
         const dialogRef = this.matdialog.open(DetailComponent,{
@@ -142,6 +126,4 @@ foodbookmark:any;
         }
     })
   }
-
-
 }

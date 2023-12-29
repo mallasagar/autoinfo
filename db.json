@@ -53,20 +53,8 @@
       "userpassword": "burgerhouse",
       "id": 7
     }
- 
   ],
   "customers": [
-    {
-      "customername": "john",
-      "customeraddress": "ktm",
-      "customergender": "male",
-      "customerage": 12,
-      "customercontact": "9810293848",
-      "customeremail": "john@gmail.com",
-      "userrole": "customer",
-      "customerpassword": "john",
-      "id": 1
-    },
     {
       "customername": "sagar",
       "customeraddress": "ktm",
@@ -77,6 +65,17 @@
       "userrole": "customer",
       "customerpassword": "sagar",
       "id": 2
+    },
+    {
+      "customername": "john",
+      "customeraddress": "ktm",
+      "customergender": "male",
+      "customerage": 12,
+      "customercontact": "9801928383",
+      "customeremail": "john@gmail.com",
+      "userrole": "customer",
+      "customerpassword": "john",
+      "id": 3
     }
   ],
   "orders": [
@@ -85,37 +84,19 @@
       "customercontact": "9810293848",
       "customeraddress": "ktm",
       "customerid": 1,
-      "totalprice": "190",
+      "totalprice": "",
       "totalorder": "",
-      "time": "Thu Dec 28 2023 13:03:40 GMT+0545 (Nepal Time)",
+      "time": "Fri Dec 29 2023 14:15:13 GMT+0545 (Nepal Time)",
       "orderstatus": "request",
       "order": [
         {
-          "ordername": " Cheese Burger",
-          "orderprice": "199",
-          "orderquantity": 2,
-          "orderbrandname": "sagar house resturant",
-          "orderbrandid": 6,
-          "ordertotalprice": "398",
-          "suborderstatus": "completed"
-        },
-        {
-          "ordername": "momo",
-          "orderprice": "170",
+          "ordername": "coca cola",
+          "orderprice": "95",
           "orderquantity": 3,
           "orderbrandname": "sagar house resturant",
           "orderbrandid": 6,
-          "ordertotalprice": "510",
-          "suborderstatus": "completed"
-        },
-        {
-          "ordername": "coca cola",
-          "orderprice": "95",
-          "orderquantity": 2,
-          "orderbrandname": "sagar house resturant",
-          "orderbrandid": 6,
-          "ordertotalprice": "190",
-          "suborderstatus": "failed"
+          "ordertotalprice": "285",
+          "suborderstatus": "preparing"
         }
       ],
       "id": 1
@@ -125,22 +106,114 @@
       "customercontact": "9810293848",
       "customeraddress": "ktm",
       "customerid": 1,
-      "totalprice": "",
+      "totalprice": "540",
       "totalorder": "",
-      "time": "Thu Dec 28 2023 13:03:57 GMT+0545 (Nepal Time)",
+      "time": "Fri Dec 29 2023 14:15:28 GMT+0545 (Nepal Time)",
       "orderstatus": "request",
       "order": [
         {
-          "ordername": "samosa",
-          "orderprice": "25",
-          "orderquantity": 5,
+          "ordername": " Cheese Burger",
+          "orderprice": "199",
+          "orderquantity": 2,
           "orderbrandname": "sagar house resturant",
           "orderbrandid": 6,
-          "ordertotalprice": "125",
+          "ordertotalprice": "398",
+          "suborderstatus": "failed"
+        },
+        {
+          "ordername": "momo",
+          "orderprice": "170",
+          "orderquantity": 1,
+          "orderbrandname": "sagar house resturant",
+          "orderbrandid": 6,
+          "ordertotalprice": "170",
           "suborderstatus": "completed"
+        },
+        {
+          "ordername": "Hotdog",
+          "orderprice": "180",
+          "orderquantity": 3,
+          "orderbrandname": "Hamrosan Resturant",
+          "orderbrandid": 4,
+          "ordertotalprice": "540",
+          "suborderstatus": "preparing"
         }
       ],
       "id": 2
+    },
+    {
+      "customername": "john",
+      "customercontact": "9810293848",
+      "customeraddress": "ktm",
+      "customerid": 1,
+      "totalprice": "",
+      "totalorder": "",
+      "time": "Fri Dec 29 2023 14:18:17 GMT+0545 (Nepal Time)",
+      "orderstatus": "request",
+      "order": [],
+      "id": 3
+    },
+    {
+      "customername": "sagar",
+      "customercontact": "9810293838",
+      "customeraddress": "ktm",
+      "customerid": 2,
+      "totalprice": "",
+      "totalorder": "",
+      "time": "Fri Dec 29 2023 15:05:25 GMT+0545 (Nepal Time)",
+      "orderstatus": "request",
+      "order": [
+        {
+          "ordername": "sprite",
+          "orderprice": "95",
+          "orderquantity": 3,
+          "orderbrandname": "sagar house resturant",
+          "orderbrandid": 6,
+          "ordertotalprice": "285",
+          "suborderstatus": "request"
+        }
+      ],
+      "id": 4
+    },
+    {
+      "customername": "sagar",
+      "customercontact": "9810293838",
+      "customeraddress": "ktm",
+      "customerid": 2,
+      "totalprice": "170",
+      "totalorder": "",
+      "time": "Fri Dec 29 2023 15:06:02 GMT+0545 (Nepal Time)",
+      "orderstatus": "request",
+      "order": [
+        {
+          "ordername": "sizler",
+          "orderprice": "300",
+          "orderquantity": 1,
+          "orderbrandname": "sagar house resturant",
+          "orderbrandid": 6,
+          "ordertotalprice": "300",
+          "suborderstatus": "request"
+        },
+        {
+          "ordername": " Cheese Burger",
+          "orderprice": "199",
+          "orderquantity": 1,
+          "orderbrandname": "sagar house resturant",
+          "orderbrandid": 6,
+          "ordertotalprice": "199",
+          "suborderstatus": "request"
+        },
+        {
+          "ordername": "momo",
+          "orderprice": "170",
+          "orderquantity": 1,
+          "orderbrandname": "sagar house resturant",
+          "orderbrandid": 6,
+          "ordertotalprice": "170",
+          "suborderstatus": "request"
+        }
+      ],
+      "id": 5
     }
   ],
   "favourites": [],
