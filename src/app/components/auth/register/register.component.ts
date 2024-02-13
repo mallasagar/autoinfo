@@ -18,9 +18,22 @@ export class RegisterComponent {
   constructor(private authservice:AuthenticationService,private route:Router, private toast:ToastrService){
 
   }
+
+  checkEmail(){
+    if(this.user.useremail.includes("@")&&this.user.useremail.includes(".com")){
+      return true
+    }else{
+      return false
+    }
+  }
+
   // adding user if form is valid
   RegisterUser(){
     // get all user emails list in array 
+   
+    const checkemailvalid= this.checkEmail()
+    if(checkemailvalid){
+
     this.authservice.checkEmailExists()
       .subscribe((emails)=>{
         this.emails = emails;
@@ -43,6 +56,11 @@ export class RegisterComponent {
 
           }
       })
+    }
+    else{
+      this.toast.error("Invalid Email Address");
+    }
+
   }
 
 // add users to the list of users

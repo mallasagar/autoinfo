@@ -13,7 +13,8 @@
                 <div class="relative overflow-hidden w-50 h-40"  (click)="viewfood(item.id)">
                   <img class="transition-transform transform hover:scale-110 duration-300" [src]="item.foodimageurl" alt="Product Image"></div>
                   <div class="px-6 py-4">
-                  <div class="font-bold text-xl mb-2">{{ item.foodname }}</div><p class="text-gray-700 text-base">Price: $ {{ item.foodprice }}</p> </div>
+                  <div class="font-bold text-xl mb-2">{{ item.foodname }}</div><p class="text-gray-700 text-base">Price:  {{ item.foodprice |currency:'EUR':'symbol':'1.2-2'}}</p> </div>
+                
                 
                 <div class="flex flex-row gap-2 justify-center  pb-4 pt-2">
               
@@ -21,8 +22,8 @@
                 class="bg-transparent border border-green-400 text-lg shadow-xl text-black hover:bg-green-600 hover:text-white font-bold py-2 px-8 rounded-lg"
                 (click)="buyfood(item.id)">Buy</button>
           </div>
-              <p class="text-gray-500 text-center text-xs my-4">from: {{ item.foodmakerbrand }}</p>
-          </div>
+              <p class="text-gray-500 text-center text-xs my-4">from: {{ item.foodmakerbrand  }}</p>
+          </div>  
       </ng-container>
     </ng-container>
   </div>

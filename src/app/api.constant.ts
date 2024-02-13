@@ -10,3 +10,4 @@ export const API_ENDPOINTS = {
   
   // Add more endpoints as needed
 };
+

@@ -22,7 +22,6 @@ import { CustomerComponent } from './components/customer/customer.component';
     LoginComponent,
     RegisterComponent,
     CustomerComponent,
-  
     // HighlightDirective
   ],
   imports: [
